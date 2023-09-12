@@ -14,7 +14,7 @@ repositories {
 
 dependencies {
     testImplementation group: 'junit', name: 'junit', version: '4.13.2'
-    implementation 'org.json:json:20230618'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
 }
 
 mainClassName = 'sportyfy.core.IniciadorSportyfyCore'
