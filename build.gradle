@@ -17,4 +17,4 @@ dependencies {
     implementation 'org.json:json:20230618'
 }
 
-mainClassName = 'sportyfy.core.Main'
+mainClassName = 'sportyfy.core.IniciadorSportyfyCore'
