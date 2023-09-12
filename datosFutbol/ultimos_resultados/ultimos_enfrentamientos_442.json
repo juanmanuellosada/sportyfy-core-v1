@@ -1,0 +1,434 @@
+[
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            },
+            "local": {
+                "id": 441,
+                "nombre": "Union Santa Fe"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 3
+        },
+        "equipos": {
+            "visitante": {
+                "id": 474,
+                "nombre": "Sarmiento Junin"
+            },
+            "local": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 2,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            },
+            "local": {
+                "id": 439,
+                "nombre": "Godoy Cruz"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 2,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 446,
+                "nombre": "Lanus"
+            },
+            "local": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 2,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            },
+            "local": {
+                "id": 459,
+                "nombre": "Arsenal Sarandi"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 452,
+                "nombre": "Tigre"
+            },
+            "local": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 3
+        },
+        "equipos": {
+            "visitante": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            },
+            "local": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            },
+            "local": {
+                "id": 435,
+                "nombre": "River Plate"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 440,
+                "nombre": "Belgrano Cordoba"
+            },
+            "local": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 436,
+                "nombre": "Racing Club"
+            },
+            "local": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            },
+            "local": {
+                "id": 437,
+                "nombre": "Rosario Central"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 450,
+                "nombre": "Estudiantes L.P."
+            },
+            "local": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            },
+            "local": {
+                "id": 460,
+                "nombre": "San Lorenzo"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 448,
+                "nombre": "Colon Santa Fe"
+            },
+            "local": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 2,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            },
+            "local": {
+                "id": 2432,
+                "nombre": "Barracas Central"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 478,
+                "nombre": "Instituto Cordoba"
+            },
+            "local": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 3,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            },
+            "local": {
+                "id": 449,
+                "nombre": "Banfield"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 2,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 1065,
+                "nombre": "Central Cordoba de Santiago"
+            },
+            "local": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 438,
+                "nombre": "Velez Sarsfield"
+            },
+            "local": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            },
+            "local": {
+                "id": 1064,
+                "nombre": "Platense"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 456,
+                "nombre": "Talleres Cordoba"
+            },
+            "local": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            },
+            "local": {
+                "id": 451,
+                "nombre": "Boca Juniors"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 3
+        },
+        "equipos": {
+            "visitante": {
+                "id": 455,
+                "nombre": "Atletico Tucuman"
+            },
+            "local": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 2,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            },
+            "local": {
+                "id": 453,
+                "nombre": "Independiente"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 457,
+                "nombre": "Newells Old Boys"
+            },
+            "local": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 2,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            },
+            "local": {
+                "id": 434,
+                "nombre": "Gimnasia L.P."
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 4,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 445,
+                "nombre": "Huracan"
+            },
+            "local": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            }
+        }
+    }
+]

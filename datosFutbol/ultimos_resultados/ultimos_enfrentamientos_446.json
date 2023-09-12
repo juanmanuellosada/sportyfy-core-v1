@@ -1,0 +1,434 @@
+[
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 2432,
+                "nombre": "Barracas Central"
+            },
+            "local": {
+                "id": 446,
+                "nombre": "Lanus"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 446,
+                "nombre": "Lanus"
+            },
+            "local": {
+                "id": 478,
+                "nombre": "Instituto Cordoba"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 2,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 449,
+                "nombre": "Banfield"
+            },
+            "local": {
+                "id": 446,
+                "nombre": "Lanus"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 2,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 446,
+                "nombre": "Lanus"
+            },
+            "local": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 438,
+                "nombre": "Velez Sarsfield"
+            },
+            "local": {
+                "id": 446,
+                "nombre": "Lanus"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 446,
+                "nombre": "Lanus"
+            },
+            "local": {
+                "id": 1064,
+                "nombre": "Platense"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 456,
+                "nombre": "Talleres Cordoba"
+            },
+            "local": {
+                "id": 446,
+                "nombre": "Lanus"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 446,
+                "nombre": "Lanus"
+            },
+            "local": {
+                "id": 441,
+                "nombre": "Union Santa Fe"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 446,
+                "nombre": "Lanus"
+            },
+            "local": {
+                "id": 451,
+                "nombre": "Boca Juniors"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 455,
+                "nombre": "Atletico Tucuman"
+            },
+            "local": {
+                "id": 446,
+                "nombre": "Lanus"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 446,
+                "nombre": "Lanus"
+            },
+            "local": {
+                "id": 453,
+                "nombre": "Independiente"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 457,
+                "nombre": "Newells Old Boys"
+            },
+            "local": {
+                "id": 446,
+                "nombre": "Lanus"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 446,
+                "nombre": "Lanus"
+            },
+            "local": {
+                "id": 434,
+                "nombre": "Gimnasia L.P."
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 445,
+                "nombre": "Huracan"
+            },
+            "local": {
+                "id": 446,
+                "nombre": "Lanus"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 474,
+                "nombre": "Sarmiento Junin"
+            },
+            "local": {
+                "id": 446,
+                "nombre": "Lanus"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 4,
+            "local": 4
+        },
+        "equipos": {
+            "visitante": {
+                "id": 446,
+                "nombre": "Lanus"
+            },
+            "local": {
+                "id": 439,
+                "nombre": "Godoy Cruz"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 446,
+                "nombre": "Lanus"
+            },
+            "local": {
+                "id": 1065,
+                "nombre": "Central Cordoba de Santiago"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 3
+        },
+        "equipos": {
+            "visitante": {
+                "id": 459,
+                "nombre": "Arsenal Sarandi"
+            },
+            "local": {
+                "id": 446,
+                "nombre": "Lanus"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 446,
+                "nombre": "Lanus"
+            },
+            "local": {
+                "id": 452,
+                "nombre": "Tigre"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            },
+            "local": {
+                "id": 446,
+                "nombre": "Lanus"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 446,
+                "nombre": "Lanus"
+            },
+            "local": {
+                "id": 440,
+                "nombre": "Belgrano Cordoba"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 2,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 435,
+                "nombre": "River Plate"
+            },
+            "local": {
+                "id": 446,
+                "nombre": "Lanus"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 446,
+                "nombre": "Lanus"
+            },
+            "local": {
+                "id": 436,
+                "nombre": "Racing Club"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 3
+        },
+        "equipos": {
+            "visitante": {
+                "id": 437,
+                "nombre": "Rosario Central"
+            },
+            "local": {
+                "id": 446,
+                "nombre": "Lanus"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 2,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 446,
+                "nombre": "Lanus"
+            },
+            "local": {
+                "id": 450,
+                "nombre": "Estudiantes L.P."
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 460,
+                "nombre": "San Lorenzo"
+            },
+            "local": {
+                "id": 446,
+                "nombre": "Lanus"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 2,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 446,
+                "nombre": "Lanus"
+            },
+            "local": {
+                "id": 448,
+                "nombre": "Colon Santa Fe"
+            }
+        }
+    }
+]

@@ -1,0 +1,434 @@
+[
+    {
+        "goles": {
+            "visitante": 3,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 450,
+                "nombre": "Estudiantes L.P."
+            },
+            "local": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 2,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            },
+            "local": {
+                "id": 460,
+                "nombre": "San Lorenzo"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 448,
+                "nombre": "Colon Santa Fe"
+            },
+            "local": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            },
+            "local": {
+                "id": 2432,
+                "nombre": "Barracas Central"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 478,
+                "nombre": "Instituto Cordoba"
+            },
+            "local": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            },
+            "local": {
+                "id": 449,
+                "nombre": "Banfield"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 3
+        },
+        "equipos": {
+            "visitante": {
+                "id": 442,
+                "nombre": "Defensa Y Justicia"
+            },
+            "local": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            },
+            "local": {
+                "id": 438,
+                "nombre": "Velez Sarsfield"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 1064,
+                "nombre": "Platense"
+            },
+            "local": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            },
+            "local": {
+                "id": 456,
+                "nombre": "Talleres Cordoba"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 451,
+                "nombre": "Boca Juniors"
+            },
+            "local": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 2,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            },
+            "local": {
+                "id": 455,
+                "nombre": "Atletico Tucuman"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 2,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 453,
+                "nombre": "Independiente"
+            },
+            "local": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            },
+            "local": {
+                "id": 457,
+                "nombre": "Newells Old Boys"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 4,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 434,
+                "nombre": "Gimnasia L.P."
+            },
+            "local": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            },
+            "local": {
+                "id": 445,
+                "nombre": "Huracan"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 5
+        },
+        "equipos": {
+            "visitante": {
+                "id": 441,
+                "nombre": "Union Santa Fe"
+            },
+            "local": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            },
+            "local": {
+                "id": 474,
+                "nombre": "Sarmiento Junin"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 3
+        },
+        "equipos": {
+            "visitante": {
+                "id": 439,
+                "nombre": "Godoy Cruz"
+            },
+            "local": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            },
+            "local": {
+                "id": 446,
+                "nombre": "Lanus"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 459,
+                "nombre": "Arsenal Sarandi"
+            },
+            "local": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 0
+        },
+        "equipos": {
+            "visitante": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            },
+            "local": {
+                "id": 452,
+                "nombre": "Tigre"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            },
+            "local": {
+                "id": 1065,
+                "nombre": "Central Cordoba de Santiago"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 3
+        },
+        "equipos": {
+            "visitante": {
+                "id": 440,
+                "nombre": "Belgrano Cordoba"
+            },
+            "local": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 1,
+            "local": 2
+        },
+        "equipos": {
+            "visitante": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            },
+            "local": {
+                "id": 435,
+                "nombre": "River Plate"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 436,
+                "nombre": "Racing Club"
+            },
+            "local": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            }
+        }
+    },
+    {
+        "goles": {
+            "visitante": 0,
+            "local": 1
+        },
+        "equipos": {
+            "visitante": {
+                "id": 458,
+                "nombre": "Argentinos JRS"
+            },
+            "local": {
+                "id": 437,
+                "nombre": "Rosario Central"
+            }
+        }
+    }
+]
