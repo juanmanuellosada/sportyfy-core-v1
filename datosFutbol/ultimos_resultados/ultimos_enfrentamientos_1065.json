@@ -1,434 +1,164 @@
 [
     {
-        "goles": {
-            "visitante": 2,
-            "local": 0
-        },
-        "equipos": {
-            "visitante": {
-                "id": 455,
-                "nombre": "Atletico Tucuman"
-            },
-            "local": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            }
-        }
+        "equipoLocal": {"id": 1065},
+        "equipoVisitante": {"id": 455},
+        "golesLocal": 0,
+        "golesVisitante": 2
     },
     {
-        "goles": {
-            "visitante": 1,
-            "local": 3
-        },
-        "equipos": {
-            "visitante": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            },
-            "local": {
-                "id": 436,
-                "nombre": "Racing Club"
-            }
-        }
+        "equipoLocal": {"id": 436},
+        "equipoVisitante": {"id": 1065},
+        "golesLocal": 3,
+        "golesVisitante": 1
     },
     {
-        "goles": {
-            "visitante": 1,
-            "local": 0
-        },
-        "equipos": {
-            "visitante": {
-                "id": 453,
-                "nombre": "Independiente"
-            },
-            "local": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            }
-        }
+        "equipoLocal": {"id": 1065},
+        "equipoVisitante": {"id": 453},
+        "golesLocal": 0,
+        "golesVisitante": 1
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 2
-        },
-        "equipos": {
-            "visitante": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            },
-            "local": {
-                "id": 437,
-                "nombre": "Rosario Central"
-            }
-        }
+        "equipoLocal": {"id": 437},
+        "equipoVisitante": {"id": 1065},
+        "golesLocal": 2,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 2
-        },
-        "equipos": {
-            "visitante": {
-                "id": 457,
-                "nombre": "Newells Old Boys"
-            },
-            "local": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            }
-        }
+        "equipoLocal": {"id": 1065},
+        "equipoVisitante": {"id": 457},
+        "golesLocal": 2,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 1,
-            "local": 1
-        },
-        "equipos": {
-            "visitante": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            },
-            "local": {
-                "id": 450,
-                "nombre": "Estudiantes L.P."
-            }
-        }
+        "equipoLocal": {"id": 450},
+        "equipoVisitante": {"id": 1065},
+        "golesLocal": 1,
+        "golesVisitante": 1
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 0
-        },
-        "equipos": {
-            "visitante": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            },
-            "local": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            }
-        }
+        "equipoLocal": {"id": 1065},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 0,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 0
-        },
-        "equipos": {
-            "visitante": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            },
-            "local": {
-                "id": 460,
-                "nombre": "San Lorenzo"
-            }
-        }
+        "equipoLocal": {"id": 460},
+        "equipoVisitante": {"id": 1065},
+        "golesLocal": 0,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 2
-        },
-        "equipos": {
-            "visitante": {
-                "id": 445,
-                "nombre": "Huracan"
-            },
-            "local": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            }
-        }
+        "equipoLocal": {"id": 1065},
+        "equipoVisitante": {"id": 445},
+        "golesLocal": 2,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 2,
-            "local": 2
-        },
-        "equipos": {
-            "visitante": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            },
-            "local": {
-                "id": 448,
-                "nombre": "Colon Santa Fe"
-            }
-        }
+        "equipoLocal": {"id": 448},
+        "equipoVisitante": {"id": 1065},
+        "golesLocal": 2,
+        "golesVisitante": 2
     },
     {
-        "goles": {
-            "visitante": 1,
-            "local": 0
-        },
-        "equipos": {
-            "visitante": {
-                "id": 441,
-                "nombre": "Union Santa Fe"
-            },
-            "local": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            }
-        }
+        "equipoLocal": {"id": 1065},
+        "equipoVisitante": {"id": 441},
+        "golesLocal": 0,
+        "golesVisitante": 1
     },
     {
-        "goles": {
-            "visitante": 2,
-            "local": 2
-        },
-        "equipos": {
-            "visitante": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            },
-            "local": {
-                "id": 2432,
-                "nombre": "Barracas Central"
-            }
-        }
+        "equipoLocal": {"id": 2432},
+        "equipoVisitante": {"id": 1065},
+        "golesLocal": 2,
+        "golesVisitante": 2
     },
     {
-        "goles": {
-            "visitante": 1,
-            "local": 0
-        },
-        "equipos": {
-            "visitante": {
-                "id": 474,
-                "nombre": "Sarmiento Junin"
-            },
-            "local": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            }
-        }
+        "equipoLocal": {"id": 1065},
+        "equipoVisitante": {"id": 474},
+        "golesLocal": 0,
+        "golesVisitante": 1
     },
     {
-        "goles": {
-            "visitante": 2,
-            "local": 0
-        },
-        "equipos": {
-            "visitante": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            },
-            "local": {
-                "id": 478,
-                "nombre": "Instituto Cordoba"
-            }
-        }
+        "equipoLocal": {"id": 478},
+        "equipoVisitante": {"id": 1065},
+        "golesLocal": 0,
+        "golesVisitante": 2
     },
     {
-        "goles": {
-            "visitante": 2,
-            "local": 0
-        },
-        "equipos": {
-            "visitante": {
-                "id": 439,
-                "nombre": "Godoy Cruz"
-            },
-            "local": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            }
-        }
+        "equipoLocal": {"id": 1065},
+        "equipoVisitante": {"id": 439},
+        "golesLocal": 0,
+        "golesVisitante": 2
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 1
-        },
-        "equipos": {
-            "visitante": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            },
-            "local": {
-                "id": 449,
-                "nombre": "Banfield"
-            }
-        }
+        "equipoLocal": {"id": 449},
+        "equipoVisitante": {"id": 1065},
+        "golesLocal": 1,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 1,
-            "local": 1
-        },
-        "equipos": {
-            "visitante": {
-                "id": 446,
-                "nombre": "Lanus"
-            },
-            "local": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            }
-        }
+        "equipoLocal": {"id": 1065},
+        "equipoVisitante": {"id": 446},
+        "golesLocal": 1,
+        "golesVisitante": 1
     },
     {
-        "goles": {
-            "visitante": 2,
-            "local": 1
-        },
-        "equipos": {
-            "visitante": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            },
-            "local": {
-                "id": 442,
-                "nombre": "Defensa Y Justicia"
-            }
-        }
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 1065},
+        "golesLocal": 1,
+        "golesVisitante": 2
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 1
-        },
-        "equipos": {
-            "visitante": {
-                "id": 459,
-                "nombre": "Arsenal Sarandi"
-            },
-            "local": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            }
-        }
+        "equipoLocal": {"id": 1065},
+        "equipoVisitante": {"id": 459},
+        "golesLocal": 1,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 4
-        },
-        "equipos": {
-            "visitante": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            },
-            "local": {
-                "id": 438,
-                "nombre": "Velez Sarsfield"
-            }
-        }
+        "equipoLocal": {"id": 438},
+        "equipoVisitante": {"id": 1065},
+        "golesLocal": 4,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 2
-        },
-        "equipos": {
-            "visitante": {
-                "id": 452,
-                "nombre": "Tigre"
-            },
-            "local": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            }
-        }
+        "equipoLocal": {"id": 1065},
+        "equipoVisitante": {"id": 452},
+        "golesLocal": 2,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 1,
-            "local": 1
-        },
-        "equipos": {
-            "visitante": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            },
-            "local": {
-                "id": 1064,
-                "nombre": "Platense"
-            }
-        }
+        "equipoLocal": {"id": 1064},
+        "equipoVisitante": {"id": 1065},
+        "golesLocal": 1,
+        "golesVisitante": 1
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 1
-        },
-        "equipos": {
-            "visitante": {
-                "id": 458,
-                "nombre": "Argentinos JRS"
-            },
-            "local": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            }
-        }
+        "equipoLocal": {"id": 1065},
+        "equipoVisitante": {"id": 458},
+        "golesLocal": 1,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 2
-        },
-        "equipos": {
-            "visitante": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            },
-            "local": {
-                "id": 456,
-                "nombre": "Talleres Cordoba"
-            }
-        }
+        "equipoLocal": {"id": 456},
+        "equipoVisitante": {"id": 1065},
+        "golesLocal": 2,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 1,
-            "local": 0
-        },
-        "equipos": {
-            "visitante": {
-                "id": 440,
-                "nombre": "Belgrano Cordoba"
-            },
-            "local": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            }
-        }
+        "equipoLocal": {"id": 1065},
+        "equipoVisitante": {"id": 440},
+        "golesLocal": 0,
+        "golesVisitante": 1
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 0
-        },
-        "equipos": {
-            "visitante": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            },
-            "local": {
-                "id": 451,
-                "nombre": "Boca Juniors"
-            }
-        }
+        "equipoLocal": {"id": 451},
+        "equipoVisitante": {"id": 1065},
+        "golesLocal": 0,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 2,
-            "local": 0
-        },
-        "equipos": {
-            "visitante": {
-                "id": 435,
-                "nombre": "River Plate"
-            },
-            "local": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            }
-        }
+        "equipoLocal": {"id": 1065},
+        "equipoVisitante": {"id": 435},
+        "golesLocal": 0,
+        "golesVisitante": 2
     }
 ]

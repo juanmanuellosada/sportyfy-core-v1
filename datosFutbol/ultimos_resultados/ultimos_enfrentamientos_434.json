@@ -1,434 +1,164 @@
 [
     {
-        "goles": {
-            "visitante": 1,
-            "local": 1
-        },
-        "equipos": {
-            "visitante": {
-                "id": 1064,
-                "nombre": "Platense"
-            },
-            "local": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            }
-        }
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 1064},
+        "golesLocal": 1,
+        "golesVisitante": 1
     },
     {
-        "goles": {
-            "visitante": 2,
-            "local": 2
-        },
-        "equipos": {
-            "visitante": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            },
-            "local": {
-                "id": 456,
-                "nombre": "Talleres Cordoba"
-            }
-        }
+        "equipoLocal": {"id": 456},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 2,
+        "golesVisitante": 2
     },
     {
-        "goles": {
-            "visitante": 3,
-            "local": 1
-        },
-        "equipos": {
-            "visitante": {
-                "id": 451,
-                "nombre": "Boca Juniors"
-            },
-            "local": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            }
-        }
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 451},
+        "golesLocal": 1,
+        "golesVisitante": 3
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 2
-        },
-        "equipos": {
-            "visitante": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            },
-            "local": {
-                "id": 455,
-                "nombre": "Atletico Tucuman"
-            }
-        }
+        "equipoLocal": {"id": 455},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 2,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 1,
-            "local": 1
-        },
-        "equipos": {
-            "visitante": {
-                "id": 453,
-                "nombre": "Independiente"
-            },
-            "local": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            }
-        }
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 453},
+        "golesLocal": 1,
+        "golesVisitante": 1
     },
     {
-        "goles": {
-            "visitante": 2,
-            "local": 2
-        },
-        "equipos": {
-            "visitante": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            },
-            "local": {
-                "id": 457,
-                "nombre": "Newells Old Boys"
-            }
-        }
+        "equipoLocal": {"id": 457},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 2,
+        "golesVisitante": 2
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 0
-        },
-        "equipos": {
-            "visitante": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            },
-            "local": {
-                "id": 1065,
-                "nombre": "Central Cordoba de Santiago"
-            }
-        }
+        "equipoLocal": {"id": 1065},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 0,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 1
-        },
-        "equipos": {
-            "visitante": {
-                "id": 445,
-                "nombre": "Huracan"
-            },
-            "local": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            }
-        }
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 445},
+        "golesLocal": 1,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 2
-        },
-        "equipos": {
-            "visitante": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            },
-            "local": {
-                "id": 441,
-                "nombre": "Union Santa Fe"
-            }
-        }
+        "equipoLocal": {"id": 441},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 2,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 0
-        },
-        "equipos": {
-            "visitante": {
-                "id": 474,
-                "nombre": "Sarmiento Junin"
-            },
-            "local": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            }
-        }
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 474},
+        "golesLocal": 0,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 2
-        },
-        "equipos": {
-            "visitante": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            },
-            "local": {
-                "id": 439,
-                "nombre": "Godoy Cruz"
-            }
-        }
+        "equipoLocal": {"id": 439},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 2,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 1
-        },
-        "equipos": {
-            "visitante": {
-                "id": 446,
-                "nombre": "Lanus"
-            },
-            "local": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            }
-        }
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 446},
+        "golesLocal": 1,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 1,
-            "local": 0
-        },
-        "equipos": {
-            "visitante": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            },
-            "local": {
-                "id": 459,
-                "nombre": "Arsenal Sarandi"
-            }
-        }
+        "equipoLocal": {"id": 459},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 0,
+        "golesVisitante": 1
     },
     {
-        "goles": {
-            "visitante": 1,
-            "local": 1
-        },
-        "equipos": {
-            "visitante": {
-                "id": 452,
-                "nombre": "Tigre"
-            },
-            "local": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            }
-        }
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 452},
+        "golesLocal": 1,
+        "golesVisitante": 1
     },
     {
-        "goles": {
-            "visitante": 4,
-            "local": 2
-        },
-        "equipos": {
-            "visitante": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            },
-            "local": {
-                "id": 458,
-                "nombre": "Argentinos JRS"
-            }
-        }
+        "equipoLocal": {"id": 458},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 2,
+        "golesVisitante": 4
     },
     {
-        "goles": {
-            "visitante": 2,
-            "local": 0
-        },
-        "equipos": {
-            "visitante": {
-                "id": 440,
-                "nombre": "Belgrano Cordoba"
-            },
-            "local": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            }
-        }
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 440},
+        "golesLocal": 0,
+        "golesVisitante": 2
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 3
-        },
-        "equipos": {
-            "visitante": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            },
-            "local": {
-                "id": 435,
-                "nombre": "River Plate"
-            }
-        }
+        "equipoLocal": {"id": 435},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 3,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 1,
-            "local": 3
-        },
-        "equipos": {
-            "visitante": {
-                "id": 436,
-                "nombre": "Racing Club"
-            },
-            "local": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            }
-        }
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 436},
+        "golesLocal": 3,
+        "golesVisitante": 1
     },
     {
-        "goles": {
-            "visitante": 1,
-            "local": 3
-        },
-        "equipos": {
-            "visitante": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            },
-            "local": {
-                "id": 437,
-                "nombre": "Rosario Central"
-            }
-        }
+        "equipoLocal": {"id": 437},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 3,
+        "golesVisitante": 1
     },
     {
-        "goles": {
-            "visitante": 1,
-            "local": 2
-        },
-        "equipos": {
-            "visitante": {
-                "id": 450,
-                "nombre": "Estudiantes L.P."
-            },
-            "local": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            }
-        }
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 450},
+        "golesLocal": 2,
+        "golesVisitante": 1
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 4
-        },
-        "equipos": {
-            "visitante": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            },
-            "local": {
-                "id": 460,
-                "nombre": "San Lorenzo"
-            }
-        }
+        "equipoLocal": {"id": 460},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 4,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 0
-        },
-        "equipos": {
-            "visitante": {
-                "id": 448,
-                "nombre": "Colon Santa Fe"
-            },
-            "local": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            }
-        }
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 448},
+        "golesLocal": 0,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 1
-        },
-        "equipos": {
-            "visitante": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            },
-            "local": {
-                "id": 2432,
-                "nombre": "Barracas Central"
-            }
-        }
+        "equipoLocal": {"id": 2432},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 1,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 2
-        },
-        "equipos": {
-            "visitante": {
-                "id": 478,
-                "nombre": "Instituto Cordoba"
-            },
-            "local": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            }
-        }
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 478},
+        "golesLocal": 2,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 0,
-            "local": 0
-        },
-        "equipos": {
-            "visitante": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            },
-            "local": {
-                "id": 449,
-                "nombre": "Banfield"
-            }
-        }
+        "equipoLocal": {"id": 449},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 0,
+        "golesVisitante": 0
     },
     {
-        "goles": {
-            "visitante": 2,
-            "local": 0
-        },
-        "equipos": {
-            "visitante": {
-                "id": 442,
-                "nombre": "Defensa Y Justicia"
-            },
-            "local": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            }
-        }
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 0,
+        "golesVisitante": 2
     },
     {
-        "goles": {
-            "visitante": 1,
-            "local": 3
-        },
-        "equipos": {
-            "visitante": {
-                "id": 434,
-                "nombre": "Gimnasia L.P."
-            },
-            "local": {
-                "id": 438,
-                "nombre": "Velez Sarsfield"
-            }
-        }
+        "equipoLocal": {"id": 438},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 3,
+        "golesVisitante": 1
     }
 ]
