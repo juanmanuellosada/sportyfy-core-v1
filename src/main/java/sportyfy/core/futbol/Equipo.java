@@ -12,5 +12,4 @@ import java.util.List;
 public class Equipo {
     private Integer id;
     private String nombre;
-    private List<Partido> partidos;
 }
