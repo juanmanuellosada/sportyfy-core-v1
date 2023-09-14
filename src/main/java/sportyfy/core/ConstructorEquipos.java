@@ -12,20 +12,19 @@ import java.util.List;
 
 @Data
 public class ConstructorEquipos {
-    private List<Equipo> equipos;
 
-    // TODO: Implementar método crearEquipos que lea los JSONS y cree los equipos
-    // con sus partidos
-    public void crearEquipos() {
+    public List<Equipo> crearEquipos(String ruta) {
         ObjectMapper mapper = new ObjectMapper();
-        String ruta = "datosFutbol/equipos/equipos.json";
+        List<Equipo> equipos = null;
 
         try {
-            // Lee el archivo JSON y mapea su contenido a una lista de objetos Equipo
-            File jsonFile = new File(ruta);
-            equipos = mapper.readValue(jsonFile, new TypeReference<List<Equipo>>() {});
+            equipos = mapper.readValue(new File(ruta), new TypeReference<List<Equipo>>(){});
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        System.out.println(equipos);
+
+        return equipos;
     }
 }
