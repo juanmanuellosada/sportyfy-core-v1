@@ -27,8 +27,6 @@ public class ConstructorPartidos {
             }
         }
 
-        System.out.println(partidos);
-
         return partidos;
     }
 

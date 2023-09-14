@@ -23,8 +23,6 @@ public class ConstructorEquipos {
             e.printStackTrace();
         }
 
-        System.out.println(equipos);
-
         return equipos;
     }
 }
