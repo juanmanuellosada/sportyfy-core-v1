@@ -7,12 +7,12 @@ import org.junit.Test;
 public class HU1 {
     @Test
     public void MainTieneSaludo() {
-        Main main = new Main();
+        IniciadorSportyfyCore main = new IniciadorSportyfyCore();
         assert main.saludar().equals("¡Hola mundo!");
     }
-    
+
     @Test
     public void SegundoTestPrueba() {
-    	assertEquals(2,2);
+        assertEquals(2, 2);
     }
 }

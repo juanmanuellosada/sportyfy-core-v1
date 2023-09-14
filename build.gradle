@@ -1,6 +1,8 @@
 plugins {
     id 'java'
     id 'application'
+    id "io.freefair.lombok" version "8.3"
+
 }
 
 group = 'sportyfy.core'
@@ -12,6 +14,7 @@ repositories {
 
 dependencies {
     testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
 }
 
-mainClassName = 'sportyfy.core.Main'
+mainClassName = 'sportyfy.core.IniciadorSportyfyCore'
