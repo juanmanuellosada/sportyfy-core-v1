@@ -9,7 +9,7 @@ public class BuscadorPronosticadores {
     private Set<Pronosticador> pronosticadores;
 
     //TODO: Implementar método encontrarPronosticadores que reciba una ruta y devuelva un Set de Pronosticadores
-    public Set<Pronosticador> encontrarPronosticadores(String ruta) {
+    public Set<Pronosticador> buscarPronosticadores(String ruta) {
         return null;
     }
 }
