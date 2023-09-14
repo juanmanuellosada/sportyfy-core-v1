@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.jar.JarEntry;
@@ -17,56 +16,74 @@ import java.util.jar.JarFile;
 public class BuscadorPronosticadores {
     private Set<Pronosticador> pronosticadores;
 
-    public Set<Pronosticador> buscarPronosticadores(String ruta) throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
-        System.out.println("Buscando pronosticadores...");
-        System.out.println("Ruta: " + ruta);
+    public BuscadorPronosticadores(String ruta) throws ClassNotFoundException, InvocationTargetException,
+            IllegalAccessException, InstantiationException, NoSuchMethodException {
+        this.pronosticadores = buscarPronosticadores(ruta);
+    }
+
+    public Set<Pronosticador> buscarPronosticadores(String ruta) throws ClassNotFoundException, IllegalAccessException,
+            InstantiationException, NoSuchMethodException, InvocationTargetException {
         Set<Pronosticador> pronosticadores = new HashSet<>();
 
         File directorio = new File(ruta);
 
+        // Si el directorio existe y es un directorio
         if (directorio.exists() && directorio.isDirectory()) {
+            // Obtenemos los archivos del directorio
             File[] archivos = directorio.listFiles();
-            System.out.println("Archivos encontrados: " + archivos.length);
 
+            // Si hay archivos
             if (archivos != null) {
+                // Por cada archivo
                 for (File archivo : archivos) {
-                    System.out.println("Archivo: " + archivo.getName());
-
+                    // Si es un archivo y termina en .jar
                     if (archivo.isFile() && archivo.getName().endsWith(".jar")) {
-                        Set<Class<?>> clases = obtenerClasesDesdeJar(archivo);
-
-                        for (Class<?> cls : clases) {
-                            if (Pronosticador.class.isAssignableFrom(cls)) {
-                                pronosticadores.add((Pronosticador) cls.getDeclaredConstructor().newInstance());
-                            }
-                        }
+                        // Agregamos los pronosticadores del archivo
+                        pronosticadores.addAll(obtenerPronosticadoresDesdeJar(archivo));
                     }
                 }
             }
         }
-        System.out.println("Pronosticadores encontrados: " + pronosticadores.size());
+
         return pronosticadores;
     }
 
-    private Set<Class<?>> obtenerClasesDesdeJar(File archivoJar) throws ClassNotFoundException {
-        Set<Class<?>> clases = new HashSet<>();
+    private Set<Pronosticador> obtenerPronosticadoresDesdeJar(File archivoJar) {
+        Set<Pronosticador> pronosticadores = new HashSet<>();
 
-        try (JarFile jarFile = new JarFile(archivoJar)) {
-            URLClassLoader classLoader = URLClassLoader.newInstance(new URL[]{archivoJar.toURI().toURL()});
-            Enumeration<JarEntry> entries = jarFile.entries();
+        // Intentamos abrir el archivo
+        try (JarFile archivoJAR = new JarFile(archivoJar)) {
+            // Obtenemos las entradas del archivo
+            URLClassLoader classLoader = URLClassLoader.newInstance(new URL[] { archivoJar.toURI().toURL() });
 
-            while (entries.hasMoreElements()) {
-                JarEntry entry = entries.nextElement();
-                if (!entry.isDirectory() && entry.getName().endsWith(".class")) {
-                    String className = entry.getName().replace("/", ".").replace(".class", "");
-                    Class<?> cls = Class.forName(className, true, classLoader);
-                    clases.add(cls);
+            // Por cada entrada del archivo si termina en .class
+            for (JarEntry entrada : archivoJAR.stream().filter(e -> e.getName().endsWith(".class"))
+                    .toArray(JarEntry[]::new)) {
+                // Obtenemos el nombre de la clase sin el .class
+                String nombreClase = entrada.getName().replace('/', '.').substring(0, entrada.getName().length() - 6);
+                // Intentamos obtener la clase
+                try {
+                    // Si la clase es un pronosticador la agregamos
+                    Class<?> cls = Class.forName(nombreClase, true, classLoader);
+
+                    if (Pronosticador.class.isAssignableFrom(cls)) {
+                        pronosticadores.add((Pronosticador) cls.getDeclaredConstructor().newInstance());
+                    }
+                    // ClassNotFoundException sale si no se encuentra la clase en el classpath
+                    // NoSuchMethodException sale si no se encuentra el constructor
+                    // IllegalAccessException sale si no se puede acceder al constructor
+                    // InstantiationException sale si no se puede instanciar la clase
+                    // InvocationTargetException sale si el constructor lanza una excepción
+                } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException
+                        | InstantiationException | InvocationTargetException e) {
+                    e.printStackTrace();
                 }
             }
+            // IOException sale si no se puede abrir el archivo
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return clases;
+        return pronosticadores;
     }
 }
