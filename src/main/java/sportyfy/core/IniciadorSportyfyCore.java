@@ -23,22 +23,6 @@ public class IniciadorSportyfyCore {
 
         this.buscadorPronosticadores = new BuscadorPronosticadores(rutaPronosticadores);
 
-        /* Ejemplo de como se usaría el buscador de pronosticadores, no aplica. Solo está para ver si se podía pronosticar correctamente */
-        for (Pronosticador pronosticador : buscadorPronosticadores.getPronosticadores()) {
-            Pronostico pronostico = pronosticador.pronosticar(equipos.get(0), equipos.get(1), partidos);
-
-            System.out.println("Pronóstico para " + pronosticador.getClass().getSimpleName() + ": " + "Equipo 1: " + equipos.get(0).getNombre() + " Equipo 2: " + equipos.get(1).getNombre() + " Resultado: Gana " + pronostico.getEquipoGanador());
-        }
     }
 
-    /* Este main es un ejemplo de como se vería el main de la UI, no aplica. Solo está para chequear el funcionamiento */
-    public static void main(String[] args) throws ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
-        IniciadorSportyfyCore iniciadorSportyfyCore = new IniciadorSportyfyCore();
-        iniciadorSportyfyCore.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/", "src/pronosticadores");
-    }
-
-    // Dejo este método porque lo usa el test de ejemplo, pero no iría
-    public String saludar() {
-        return "¡Hola mundo!";
-    }
 }

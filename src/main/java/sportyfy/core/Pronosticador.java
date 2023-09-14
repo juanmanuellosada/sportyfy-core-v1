@@ -1,5 +1,6 @@
 package sportyfy.core;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 import sportyfy.core.futbol.Equipo;
