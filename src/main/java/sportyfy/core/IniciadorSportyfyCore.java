@@ -21,16 +21,17 @@ public class IniciadorSportyfyCore {
         ConstructorPartidos constructorPartidos = new ConstructorPartidos();
         this.partidos = constructorPartidos.crearPartidos(rutaCarpetaPartidos, equipos);
 
-        this.buscadorPronosticadores = new BuscadorPronosticadores();
-        buscadorPronosticadores.setPronosticadores(buscadorPronosticadores.buscarPronosticadores(rutaPronosticadores));
+        this.buscadorPronosticadores = new BuscadorPronosticadores(rutaPronosticadores);
 
+        /* Ejemplo de como se usaría el buscador de pronosticadores, no aplica. Solo está para ver si se podía pronosticar correctamente */
         for (Pronosticador pronosticador : buscadorPronosticadores.getPronosticadores()) {
             Pronostico pronostico = pronosticador.pronosticar(equipos.get(0), equipos.get(1), partidos);
 
-            System.out.println("Pronóstico para " + pronosticador.getClass().getSimpleName() + ": " + pronostico.getEquipoGanador());
+            System.out.println("Pronóstico para " + pronosticador.getClass().getSimpleName() + ": " + "Equipo 1: " + equipos.get(0).getNombre() + " Equipo 2: " + equipos.get(1).getNombre() + " Resultado: Gana " + pronostico.getEquipoGanador());
         }
     }
 
+    /* Este main es un ejemplo de como se vería el main de la UI, no aplica. Solo está para chequear el funcionamiento */
     public static void main(String[] args) throws ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
         IniciadorSportyfyCore iniciadorSportyfyCore = new IniciadorSportyfyCore();
         iniciadorSportyfyCore.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/", "src/pronosticadores");
