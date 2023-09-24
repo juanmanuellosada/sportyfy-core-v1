@@ -4,6 +4,7 @@ import lombok.Data;
 import sportyfy.core.futbol.Equipo;
 import sportyfy.core.futbol.Partido;
 
+import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class IniciadorSportyfyCore {
     private List<Equipo> equipos;
     private List<Partido> partidos;
 
-    public void iniciar(String rutaArchivoEquipos, String rutaCarpetaPartidos, String rutaPronosticadores) throws ClassNotFoundException, InvocationTargetException, IllegalAccessException, InstantiationException, NoSuchMethodException {
+    public void iniciar(String rutaArchivoEquipos, String rutaCarpetaPartidos, String rutaPronosticadores) throws ClassNotFoundException, InvocationTargetException, IllegalAccessException, InstantiationException, NoSuchMethodException, FileNotFoundException {
         ConstructorEquipos constructorEquipos = new ConstructorEquipos();
         this.equipos = constructorEquipos.crearEquipos(rutaArchivoEquipos);
 

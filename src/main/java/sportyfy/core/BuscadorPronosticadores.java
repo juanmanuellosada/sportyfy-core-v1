@@ -3,6 +3,7 @@ package sportyfy.core;
 import lombok.Data;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
@@ -17,12 +18,12 @@ public class BuscadorPronosticadores {
     private Set<Pronosticador> pronosticadores;
 
     public BuscadorPronosticadores(String ruta) throws ClassNotFoundException, InvocationTargetException,
-            IllegalAccessException, InstantiationException, NoSuchMethodException {
+            IllegalAccessException, InstantiationException, NoSuchMethodException, FileNotFoundException {
         this.pronosticadores = buscarPronosticadores(ruta);
     }
 
     public Set<Pronosticador> buscarPronosticadores(String ruta) throws ClassNotFoundException, IllegalAccessException,
-            InstantiationException, NoSuchMethodException, InvocationTargetException {
+            InstantiationException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
         Set<Pronosticador> pronosticadores = new HashSet<>();
 
         File directorio = new File(ruta);
@@ -43,6 +44,9 @@ public class BuscadorPronosticadores {
                     }
                 }
             }
+        }
+        else{
+            throw new FileNotFoundException("No existe o no es un directorio la dirección proporcionada");
         }
 
         return pronosticadores;

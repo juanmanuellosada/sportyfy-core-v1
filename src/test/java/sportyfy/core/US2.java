@@ -3,6 +3,7 @@ package sportyfy.core;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,18 +12,6 @@ import static org.junit.Assert.*;
 
 public class US2 {
 
-
-    // Que no encuentre el pronosticador de futbol
-
-    // Extension de archivo invalida
-
-    // Ubicacion invalida
-
-    // Sin pronosticadores
-
-    // Caso feliz
-
-    // Se encuentran multiples pronosticadores
 
     static List<String> nombresPronosticadores;
 
@@ -38,16 +27,47 @@ public class US2 {
 
 
     @BeforeClass
-    public static void Escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-
+    public static void Escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, FileNotFoundException {
         iniciadorConPronosticadores = new IniciadorSportyfyCore();
         iniciadorConPronosticadores.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/", "src/pruebasPronosticadores");
+
+        cargaDeOtrosIniciadores();
+    }
+
+    @Test
+    public void CA1_EncuentraPronosticadores() {
+        assertTrue(nombresPronosticadores.contains("PronosticadorFutbol"));
+        assertTrue(nombresPronosticadores.contains("PronosticadorPrueba"));
+        assertEquals(nombresPronosticadores.size(),2);
+
+    }
+
+    @Test
+    public void CA2_ExtensionInvalida() {
+        assertFalse(nombresPronosticadores.contains("ExtensionInvalidaPronosticador"));
+    }
+
+    @Test
+    public void CA3_EncuentraJarNoEsPronosticador() {
+        assertFalse(nombresPronosticadores.contains("NoEsPronosticador"));
+    }
+
+    @Test (expected = FileNotFoundException.class)
+    public void CA4_CarpetaInvalida() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, InstantiationException, NoSuchMethodException {
+        iniciadorSinRuta = new IniciadorSportyfyCore();
+        iniciadorSinRuta.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/", "src/p");
+    }
+
+    @Test
+    public void CA5_CarpetaVacia() {
+        assertTrue(nombresPronosticadoresVacia.isEmpty());
+    }
+
+    private static void cargaDeOtrosIniciadores() throws ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, FileNotFoundException {
 
         iniciadorCarpetaVacia = new IniciadorSportyfyCore();
         iniciadorCarpetaVacia.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/", "src/pruebasPronosticadoresVacia");
 
-        iniciadorSinRuta = new IniciadorSportyfyCore();
-        iniciadorSinRuta.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/", "src/p");
 
         nombresPronosticadores = iniciadorConPronosticadores.getBuscadorPronosticadores()
                 .getPronosticadores()
@@ -61,38 +81,10 @@ public class US2 {
                 .map(pronosticador -> pronosticador.getClass().getSimpleName())
                 .collect(Collectors.toList());
 
-        nombresPronosticadoresSinRuta = iniciadorSinRuta.getBuscadorPronosticadores()
+        /*nombresPronosticadoresSinRuta = iniciadorSinRuta.getBuscadorPronosticadores()
                 .getPronosticadores()
                 .stream()
                 .map(pronosticador -> pronosticador.getClass().getSimpleName())
-                .collect(Collectors.toList());
-    }
-
-    @Test
-    public void CA1_EncuentraPronosticadores() {
-        assertTrue(nombresPronosticadores.contains("PronosticadorFutbol"));
-        assertTrue(nombresPronosticadores.contains("PronosticadorPrueba"));
-        assertEquals(nombresPronosticadores.size(),2);
-
-    }
-
-    @Test
-    public void CA2_ExtensionInvalida() {
-        assertFalse(nombresPronosticadores.contains("hola"));
-    }
-
-    @Test
-    public void CA3_EncuentraJarNoEsPronosticador() {
-        assertFalse(nombresPronosticadores.contains("NoEsPronosticador"));
-    }
-
-    @Test
-    public void CA4_CarpetaInvalida() {
-        assertEquals(nombresPronosticadoresSinRuta.size(),0);
-    }
-
-    @Test
-    public void CA5_CarpetaVacia() {
-        assertEquals(nombresPronosticadoresVacia.size(),0);
+                .collect(Collectors.toList());*/
     }
 }
