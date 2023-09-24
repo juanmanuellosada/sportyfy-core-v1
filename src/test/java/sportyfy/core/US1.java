@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class HU1 {
+public class US1 {
 
     private static Equipo local;
     private static Equipo visitante;
@@ -45,8 +45,8 @@ public class HU1 {
         pronosticoEquipoSinPartidos = pronosticador.pronosticar(local,equipoSinPartidos,partidos);
 
         //partidos vacios
-        partidosVacios = new ArrayList<Partido>();
-        pronosticoPartidosVacios = pronosticador.pronosticar(local,visitante,partidosVacios);
+        //partidosVacios = new ArrayList<Partido>();
+        //pronosticoPartidosVacios = pronosticador.pronosticar(local,visitante,partidosVacios);
 
     }
 
@@ -65,9 +65,10 @@ public class HU1 {
         assertEquals(pronosticoEquipoSinPartidos.getEquipoGanador(),local);
     }
 
-   @Test
+   @Test (expected = RuntimeException.class)
     public void CA4_NoHayInfoDePartidos() {
-        assertNull(pronosticoPartidosVacios.getEquipoGanador());
+       partidosVacios = new ArrayList<Partido>();
+       pronosticoPartidosVacios = pronosticador.pronosticar(local,visitante,partidosVacios);
     }
 
 }

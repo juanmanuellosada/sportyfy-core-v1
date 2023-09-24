@@ -3,14 +3,13 @@ package sportyfy.core;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
 
-public class HU2 {
+public class US2 {
 
 
     // Que no encuentre el pronosticador de futbol
