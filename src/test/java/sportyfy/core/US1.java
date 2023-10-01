@@ -1,7 +1,8 @@
 package sportyfy.core;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import sportyfy.core.futbol.Equipo;
 import sportyfy.core.futbol.Partido;
 
@@ -10,7 +11,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class US1 {
 
@@ -25,7 +26,7 @@ public class US1 {
     private static List<Partido> partidosVacios;
     private static Pronostico pronosticoPartidosVacios;
 
-    @BeforeClass
+    @BeforeAll
     public static void Escenario() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException, InstantiationException, NoSuchMethodException, FileNotFoundException {
         IniciadorSportyfyCore iniciador = new IniciadorSportyfyCore();
         iniciador.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/", "src/pronosticadores");
@@ -53,10 +54,12 @@ public class US1 {
         assertEquals(pronosticoEquipoSinPartidos.getEquipoGanador(), GimnasiaDeLaPlata);
     }
 
-   @Test (expected = RuntimeException.class)
+   @Test
     public void CA4_NoHayInfoDePartidos() {
        partidosVacios = new ArrayList<Partido>();
-       pronosticoPartidosVacios = pronosticador.pronosticar(GimnasiaDeLaPlata, RiverPlate,partidosVacios);
+       assertThrows(RuntimeException.class, ()->{
+           pronosticoPartidosVacios = pronosticador.pronosticar(GimnasiaDeLaPlata, RiverPlate,partidosVacios);
+       });
     }
 
     private static void inicializacionCamposParaTest(){

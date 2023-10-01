@@ -1,14 +1,16 @@
 package sportyfy.core;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 public class US2 {
 
@@ -26,7 +28,7 @@ public class US2 {
     static IniciadorSportyfyCore iniciadorCarpetaVacia;
 
 
-    @BeforeClass
+    @BeforeAll
     public static void Escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, FileNotFoundException {
         iniciadorConPronosticadores = new IniciadorSportyfyCore();
         iniciadorConPronosticadores.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/", "src/pruebasPronosticadores");
@@ -52,10 +54,13 @@ public class US2 {
         assertFalse(nombresPronosticadores.contains("NoEsPronosticador"));
     }
 
-    @Test (expected = FileNotFoundException.class)
+    @Test
     public void CA4_CarpetaInvalida() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, InstantiationException, NoSuchMethodException {
         iniciadorSinRuta = new IniciadorSportyfyCore();
-        iniciadorSinRuta.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/", "src/p");
+        assertThrows(FileNotFoundException.class, ()->{
+            iniciadorSinRuta.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/", "src/p");
+
+        });
     }
 
     @Test
@@ -80,11 +85,5 @@ public class US2 {
                 .stream()
                 .map(pronosticador -> pronosticador.getClass().getSimpleName())
                 .collect(Collectors.toList());
-
-        /*nombresPronosticadoresSinRuta = iniciadorSinRuta.getBuscadorPronosticadores()
-                .getPronosticadores()
-                .stream()
-                .map(pronosticador -> pronosticador.getClass().getSimpleName())
-                .collect(Collectors.toList());*/
     }
 }
