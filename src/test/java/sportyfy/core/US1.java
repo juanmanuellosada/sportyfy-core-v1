@@ -1,8 +1,7 @@
 package sportyfy.core;
 
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import sportyfy.core.futbol.Equipo;
 import sportyfy.core.futbol.Partido;
 
@@ -13,6 +12,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class US1 {
 
     private static Equipo GimnasiaDeLaPlata;
@@ -40,21 +40,29 @@ public class US1 {
     }
 
     @Test
+    @Order(1)
+    @DisplayName("CA1 - Pronostico efectivo del partido. (hay inclinacion a favor de un equipo)")
     public void CA1_PronosticoEfectivoDePartido() {
         assertTrue(pronosticoEfectivo.getEquipoGanador().getNombre().equals("River Plate"));
     }
 
     @Test
+    @Order(2)
+    @DisplayName("CA2 - Pronostico de empate para un partido")
     public void CA2_PronosticoEmpate() {
         assertTrue(pronosticoEmpate.getEquipoGanador()==null);
     }
 
     @Test
+    @Order(3)
+    @DisplayName("CA3 - No se encuentra partidos de algun equipo(gana el otro equipo con partidos)")
     public void CA3_NoSeEncuentranPartidosDeEquipo() {
         assertEquals(pronosticoEquipoSinPartidos.getEquipoGanador(), GimnasiaDeLaPlata);
     }
 
    @Test
+   @Order(4)
+   @DisplayName("CA4 - No existe informacion sobre los partidos(RuntimeException)")
     public void CA4_NoHayInfoDePartidos() {
        partidosVacios = new ArrayList<Partido>();
        assertThrows(RuntimeException.class, ()->{
