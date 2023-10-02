@@ -25,7 +25,7 @@ public class US1 {
     private static Equipo equipoSinPartidos;
     private static Pronostico pronosticoEquipoSinPartidos;
 
-    @BeforeAll
+    /*@BeforeAll
     public static void Escenario() throws ClassNotFoundException, InvocationTargetException, IllegalAccessException, InstantiationException, NoSuchMethodException, FileNotFoundException {
         IniciadorSportyfyCore iniciador = new IniciadorSportyfyCore();
         SportyfyCore core = iniciador.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/", "src/pronosticadores");
@@ -46,7 +46,7 @@ public class US1 {
         pronosticoEquipoSinPartidos = pronosticador.pronosticar(GimnasiaDeLaPlata, equipoSinPartidos, partidos);
     }
 
-/*    @Test
+    @Test
     @Order(1)
     @DisplayName("Prueba Pronóstico Efectivo del Partido")
     public void CA1_PronosticoEfectivo() {
