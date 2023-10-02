@@ -15,6 +15,7 @@ import java.util.Set;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 @Data
 public class BuscadorPronosticadores {
@@ -113,6 +114,8 @@ public class BuscadorPronosticadores {
     }
 
     public List<String> obtenerNombresPronosticadores(Set<Pronosticador> pronosticadores) {
-        return pronosticadores.stream().map(pronosticador -> pronosticador.getClass().getSimpleName()).toList();
+        return pronosticadores.stream()
+                .map(pronosticador -> pronosticador.getClass().getSimpleName())
+                .collect(Collectors.toList());
     }
 }
