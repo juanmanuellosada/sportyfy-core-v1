@@ -14,15 +14,30 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class US2 {
 
-    private IniciadorSportyfyCore iniciadorConPronosticadores;
-    private IniciadorSportyfyCore iniciadorCarpetaVacia;
+    private static IniciadorSportyfyCore iniciadorConPronosticadores;
+    private static IniciadorSportyfyCore iniciadorCarpetaVacia;
 
-/*
+    private static SportyfyCore coreConPronosticadores;
+
+    private static SportyfyCore coreCarpetaVacia;
+
+    @BeforeAll
+    public static void Escenario() {
+        iniciadorConPronosticadores = new IniciadorSportyfyCore();
+        coreConPronosticadores = iniciadorConPronosticadores.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/",
+                "src/pruebasPronosticadores");
+
+        iniciadorCarpetaVacia = new IniciadorSportyfyCore();
+        coreCarpetaVacia = iniciadorCarpetaVacia.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/",
+                "src/pruebasPronosticadoresVacia");
+
+    }
+
     @Test
     @Order(1)
     @DisplayName("Encuentra los Pronosticadores")
     public void pruebaEncuentraPronosticadores() {
-        List<String> nombresPronosticadores = obtenerNombresPronosticadores(iniciadorConPronosticadores);
+        List<String> nombresPronosticadores = obtenerNombresPronosticadores(coreConPronosticadores);
         assertTrue(nombresPronosticadores.contains("PronosticadorFutbol"));
         assertTrue(nombresPronosticadores.contains("PronosticadorPrueba"));
         assertEquals(2, nombresPronosticadores.size());
@@ -32,7 +47,7 @@ public class US2 {
     @Order(2)
     @DisplayName("Extension de archivo invalida")
     public void pruebaExtensionInvalida() {
-        List<String> nombresPronosticadores = obtenerNombresPronosticadores(iniciadorConPronosticadores);
+        List<String> nombresPronosticadores = obtenerNombresPronosticadores(coreCarpetaVacia);
         assertFalse(nombresPronosticadores.contains("ExtensionInvalidaPronosticador"));
     }
 
@@ -40,40 +55,22 @@ public class US2 {
     @Order(3)
     @DisplayName("No se considera Pronosticador archivo .jar")
     public void pruebaNoEsPronosticador() {
-        List<String> nombresPronosticadores = obtenerNombresPronosticadores(iniciadorConPronosticadores);
+        List<String> nombresPronosticadores = obtenerNombresPronosticadores(coreConPronosticadores);
         assertFalse(nombresPronosticadores.contains("NoEsPronosticador"));
     }
 
     @Test
     @Order(4)
-    @DisplayName("Carpeta invalida")
-    public void pruebaCarpetaInvalida() {
-        assertThrows(FileNotFoundException.class, () -> {
-            iniciarCoreConRutaInvalida();
-        });
-    }
-
-    @Test
-    @Order(5)
     @DisplayName("Carpeta vacia")
     public void pruebaCarpetaVacia() {
-        List<String> nombresPronosticadoresVacia = obtenerNombresPronosticadores(iniciadorCarpetaVacia);
+        List<String> nombresPronosticadoresVacia = obtenerNombresPronosticadores(coreCarpetaVacia);
         assertTrue(nombresPronosticadoresVacia.isEmpty());
     }
 
-    private List<String> obtenerNombresPronosticadores(IniciadorSportyfyCore iniciador) {
-        SportyfyCore core = iniciador.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/", "src/pruebasPronosticadores");
-        return core.getBuscadorPronosticadores().obtenerNombresPronosticadores(core.getBuscadorPronosticadores().getPronosticadores());
+    private List<String> obtenerNombresPronosticadores(SportyfyCore core) {
+        return core.getBuscadorPronosticadores()
+                .obtenerNombresPronosticadores(core.getBuscadorPronosticadores().getPronosticadores());
     }
 
-    private void iniciarCoreConRutaInvalida() {
-        IniciadorSportyfyCore iniciadorSinRuta = new IniciadorSportyfyCore();
-        iniciadorSinRuta.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/", "src/p");
-    }*/
 
-    @Test
-    @Order(1)
-    public void testFalso() {
-        assertTrue(true);
-    }
 }
