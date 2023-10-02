@@ -9,21 +9,27 @@ import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+import java.util.logging.Logger;
 
 @Data
 public class BuscadorPronosticadores {
     private Set<Pronosticador> pronosticadores;
 
-    public BuscadorPronosticadores(String ruta) throws ClassNotFoundException, InvocationTargetException,
-            IllegalAccessException, InstantiationException, NoSuchMethodException, FileNotFoundException {
-        this.pronosticadores = buscarPronosticadores(ruta);
+    public BuscadorPronosticadores(String ruta) {
+        try {
+            this.pronosticadores = buscarPronosticadores(ruta);
+        } catch (Exception e) {
+            Logger.getLogger("BuscadorPronosticadores").severe("Ocurrio un error al buscar los pronosticadores");
+        }
+
     }
 
-    public Set<Pronosticador> buscarPronosticadores(String ruta) throws ClassNotFoundException, IllegalAccessException,
-            InstantiationException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
+    public Set<Pronosticador> buscarPronosticadores(String ruta) throws FileNotFoundException {
         Set<Pronosticador> pronosticadores = new HashSet<>();
 
         File directorio = new File(ruta);
@@ -80,14 +86,33 @@ public class BuscadorPronosticadores {
                     // InvocationTargetException sale si el constructor lanza una excepción
                 } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException
                         | InstantiationException | InvocationTargetException e) {
-                    e.printStackTrace();
+                    Logger logger = Logger.getLogger("BuscadorPronosticadores");
+                    if(e instanceof ClassNotFoundException) {
+                        logger.severe("No se encontro la clase " + nombreClase);
+                    } else if(e instanceof NoSuchMethodException) {
+                        logger.severe("No se encontro el constructor sin argumentos de la clase " + nombreClase);
+                    } else if(e instanceof IllegalAccessException) {
+                        logger.severe("No se puede acceder al constructor sin argumentos de la clase " + nombreClase);
+                    } else if(e instanceof InstantiationException) {
+                        logger.severe("No se puede instanciar la clase " + nombreClase);
+                    } else {
+                        logger.severe("El constructor sin argumentos de la clase " + nombreClase + " lanzo una excepcion");
+                    }
                 }
             }
             // IOException sale si no se puede abrir el archivo
         } catch (IOException e) {
-            e.printStackTrace();
+            Logger.getLogger("BuscadorPronosticadores").severe("No se pudo abrir el archivo " + archivoJar.getName());
         }
 
         return pronosticadores;
+    }
+
+    public Optional<Pronosticador> buscarPronosticador(String nombre) {
+        return pronosticadores.stream().filter(pronosticador -> pronosticador.getClass().getSimpleName().equals(nombre)).findFirst();
+    }
+
+    public List<String> obtenerNombresPronosticadores(Set<Pronosticador> pronosticadores) {
+        return pronosticadores.stream().map(pronosticador -> pronosticador.getClass().getSimpleName()).toList();
     }
 }

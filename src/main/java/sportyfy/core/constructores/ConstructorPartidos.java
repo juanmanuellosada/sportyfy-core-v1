@@ -1,9 +1,9 @@
-package sportyfy.core;
+package sportyfy.core.constructores;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import sportyfy.core.futbol.Equipo;
-import sportyfy.core.futbol.Partido;
+import sportyfy.core.entidades.Equipo;
+import sportyfy.core.entidades.Partido;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 public class ConstructorPartidos {
 
@@ -55,7 +56,7 @@ public class ConstructorPartidos {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            Logger.getLogger("ConstructorPartidos").severe("No se pudo cargar el archivo de partidos");
         }
 
         return partidos;
