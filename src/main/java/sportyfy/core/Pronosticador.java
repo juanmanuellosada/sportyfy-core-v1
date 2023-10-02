@@ -1,10 +1,9 @@
 package sportyfy.core;
 
-import java.io.FileNotFoundException;
 import java.util.List;
 
-import sportyfy.core.futbol.Equipo;
-import sportyfy.core.futbol.Partido;
+import sportyfy.core.entidades.Equipo;
+import sportyfy.core.entidades.Partido;
 
 public interface Pronosticador {
     public Pronostico pronosticar(Equipo equipoLocal, Equipo equipoVisitante, List<Partido> partidosAnteriores);

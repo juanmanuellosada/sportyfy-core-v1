@@ -1,14 +1,15 @@
-package sportyfy.core;
+package sportyfy.core.constructores;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
 
-import sportyfy.core.futbol.Equipo;
+import sportyfy.core.entidades.Equipo;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Logger;
 
 @Data
 public class ConstructorEquipos {
@@ -20,7 +21,7 @@ public class ConstructorEquipos {
         try {
             equipos = mapper.readValue(new File(ruta), new TypeReference<List<Equipo>>(){});
         } catch (IOException e) {
-            e.printStackTrace();
+            Logger.getLogger("ConstructorEquipos").severe("No se pudo cargar el archivo de equipos");
         }
 
         return equipos;

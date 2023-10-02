@@ -1,7 +1,8 @@
 package sportyfy.core;
 
-
 import org.junit.jupiter.api.*;
+import sportyfy.core.iniciador.IniciadorSportyfyCore;
+import sportyfy.core.modelo.SportyfyCore;
 
 import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
@@ -13,86 +14,64 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class US2 {
 
-
-    static List<String> nombresPronosticadores;
-
-    static List<String> nombresPronosticadoresVacia;
-
-    static List<String> nombresPronosticadoresSinRuta;
-
-    static IniciadorSportyfyCore iniciadorConPronosticadores;
-
-    static IniciadorSportyfyCore iniciadorSinRuta;
-
-    static IniciadorSportyfyCore iniciadorCarpetaVacia;
-
+    private IniciadorSportyfyCore iniciadorConPronosticadores;
+    private IniciadorSportyfyCore iniciadorCarpetaVacia;
 
     @BeforeAll
-    public static void Escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, FileNotFoundException {
-        iniciadorConPronosticadores = new IniciadorSportyfyCore();
-        iniciadorConPronosticadores.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/", "src/pruebasPronosticadores");
-
-        cargaDeOtrosIniciadores();
+    public static void Escenario() {
+        // Configuración inicial
     }
 
     @Test
     @Order(1)
-    @DisplayName("CA1 - Encuentra los Pronosticadores")
-    public void CA1_EncuentraPronosticadores() {
+    @DisplayName("Encuentra los Pronosticadores")
+    public void pruebaEncuentraPronosticadores() {
+        List<String> nombresPronosticadores = obtenerNombresPronosticadores(iniciadorConPronosticadores);
         assertTrue(nombresPronosticadores.contains("PronosticadorFutbol"));
         assertTrue(nombresPronosticadores.contains("PronosticadorPrueba"));
-        assertEquals(nombresPronosticadores.size(),2);
-
+        assertEquals(2, nombresPronosticadores.size());
     }
 
     @Test
     @Order(2)
-    @DisplayName("CA2 - Extension de archivo invalida")
-    public void CA2_ExtensionInvalida() {
+    @DisplayName("Extension de archivo invalida")
+    public void pruebaExtensionInvalida() {
+        List<String> nombresPronosticadores = obtenerNombresPronosticadores(iniciadorConPronosticadores);
         assertFalse(nombresPronosticadores.contains("ExtensionInvalidaPronosticador"));
     }
 
     @Test
     @Order(3)
-    @DisplayName("CA3 - No se considera Pronosticador archivo .jar")
-    public void CA3_EncuentraJarNoEsPronosticador() {
+    @DisplayName("No se considera Pronosticador archivo .jar")
+    public void pruebaNoEsPronosticador() {
+        List<String> nombresPronosticadores = obtenerNombresPronosticadores(iniciadorConPronosticadores);
         assertFalse(nombresPronosticadores.contains("NoEsPronosticador"));
     }
 
     @Test
     @Order(4)
-    @DisplayName("CA4 - Carpeta invalida")
-    public void CA4_CarpetaInvalida() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, InstantiationException, NoSuchMethodException {
-        iniciadorSinRuta = new IniciadorSportyfyCore();
-        assertThrows(FileNotFoundException.class, ()->{
-            iniciadorSinRuta.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/", "src/p");
-
+    @DisplayName("Carpeta invalida")
+    public void pruebaCarpetaInvalida() {
+        assertThrows(FileNotFoundException.class, () -> {
+            iniciarCoreConRutaInvalida();
         });
     }
 
     @Test
     @Order(5)
-    @DisplayName("CA5 - Carpeta vacia")
-    public void CA5_CarpetaVacia() {
+    @DisplayName("Carpeta vacia")
+    public void pruebaCarpetaVacia() {
+        List<String> nombresPronosticadoresVacia = obtenerNombresPronosticadores(iniciadorCarpetaVacia);
         assertTrue(nombresPronosticadoresVacia.isEmpty());
     }
 
-    private static void cargaDeOtrosIniciadores() throws ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, FileNotFoundException {
+    private List<String> obtenerNombresPronosticadores(IniciadorSportyfyCore iniciador) {
+        SportyfyCore core = iniciador.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/", "src/pruebasPronosticadores");
+        return core.getBuscadorPronosticadores().obtenerNombresPronosticadores(core.getBuscadorPronosticadores().getPronosticadores());
+    }
 
-        iniciadorCarpetaVacia = new IniciadorSportyfyCore();
-        iniciadorCarpetaVacia.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/", "src/pruebasPronosticadoresVacia");
-
-
-        nombresPronosticadores = iniciadorConPronosticadores.getBuscadorPronosticadores()
-                .getPronosticadores()
-                .stream()
-                .map(pronosticador -> pronosticador.getClass().getSimpleName())
-                .collect(Collectors.toList());
-
-        nombresPronosticadoresVacia = iniciadorCarpetaVacia.getBuscadorPronosticadores()
-                .getPronosticadores()
-                .stream()
-                .map(pronosticador -> pronosticador.getClass().getSimpleName())
-                .collect(Collectors.toList());
+    private void iniciarCoreConRutaInvalida() {
+        IniciadorSportyfyCore iniciadorSinRuta = new IniciadorSportyfyCore();
+        iniciadorSinRuta.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/", "src/p");
     }
 }
