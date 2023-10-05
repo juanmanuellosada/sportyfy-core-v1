@@ -14,24 +14,19 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class US2 {
 
-    private static IniciadorSportyfyCore iniciadorConPronosticadores;
-    private static IniciadorSportyfyCore iniciadorCarpetaVacia;
-    private static IniciadorSportyfyCore iniciadorArchivoInvalido;
-
+    private static IniciadorSportyfyCore iniciador;
     private static SportyfyCore coreConPronosticadores;
-
     private static SportyfyCore coreCarpetaVacia;
     private static SportyfyCore coreArchivoInvalido;
 
     @BeforeAll
     public static void Escenario() throws FileNotFoundException,IllegalArgumentException {
-        iniciadorConPronosticadores = new IniciadorSportyfyCore();
-        coreConPronosticadores = iniciadorConPronosticadores.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/",
-                "../pruebasPronosticadores");
+        iniciador = new IniciadorSportyfyCore();
+        coreConPronosticadores = iniciador.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/",
+                "src/test/java/carpetasDePrueba/pruebasPronosticadores");
 
-        iniciadorCarpetaVacia = new IniciadorSportyfyCore();
-        coreCarpetaVacia = iniciadorCarpetaVacia.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/",
-                "../pruebasPronosticadoresVacia");
+        coreCarpetaVacia = iniciador.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/",
+                "src/test/java/carpetasDePrueba/pruebasPronosticadoresVacia");
 
     }
 
@@ -50,9 +45,9 @@ public class US2 {
     @DisplayName("Extensión de archivo inválida")
     public void CA2_pruebaExtensionInvalida() {
         assertThrows(IllegalArgumentException.class, ()->{
-            iniciadorArchivoInvalido = new IniciadorSportyfyCore();
-            coreArchivoInvalido = iniciadorArchivoInvalido.iniciar("datosFutbol/equipos/equipos.json","datosFutbol/ultimos_resultados/",
-                    "../pruebasArchivoInvalido");
+            iniciador = new IniciadorSportyfyCore();
+            coreArchivoInvalido = iniciador.iniciar("datosFutbol/equipos/equipos.json","datosFutbol/ultimos_resultados/",
+                    "src/test/java/carpetasDePrueba/pruebasArchivoInvalido");
         });
 
     }
@@ -69,9 +64,8 @@ public class US2 {
     @DisplayName("Carpeta inexistente")
     public void CA4_carpetaInexistente() {
        assertThrows(FileNotFoundException.class,()->{
-          IniciadorSportyfyCore iniciadorCarpetaInexistente = new IniciadorSportyfyCore();
-          SportyfyCore coreCarpetaInexistente = iniciadorCarpetaInexistente.iniciar("datosFutbol/equipos/equipos.json","datosFutbol/ultimos_resultados/",
-                  "../carpetaNoExistente");
+          SportyfyCore coreCarpetaInexistente = iniciador.iniciar("datosFutbol/equipos/equipos.json","datosFutbol/ultimos_resultados/",
+                  "src/test/java/carpetasDePrueba/carpetaNoExistente");
        });
     }
 
