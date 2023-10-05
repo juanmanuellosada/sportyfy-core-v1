@@ -51,7 +51,7 @@ public class BuscadorPronosticadores {
                         // Agregamos los pronosticadores del archivo
                         pronosticadores.addAll(obtenerPronosticadoresDesdeJar(archivo));
                     }
-                    else{
+                    else if(!archivo.getName().endsWith(".gitkeep")) {
                         throw new IllegalArgumentException("Hay extensiones de archivo inválidas (no es .jar)");
                     }
                 }
