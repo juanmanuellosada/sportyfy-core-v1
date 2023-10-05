@@ -7,10 +7,6 @@
 
 name: Java CI with Gradle
 
-defaults:
-  run:
-    working-directory: $GITHUB_WORKSPACE/D:/programas detrabajo/intellij proyecto PP2
-
 on:
   push:
     branches: [ "main" ]
@@ -33,6 +29,11 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
+
+    - name: Copy folders for tests
+      run: cp -r D:/programas\ detrabajo/intellij\ proyecto\ PP2/pruebasArchivoInvalido ./pruebasArchivoInvalido
+       cp -r D:/programas\ detrabajo/intellij\ proyecto\ PP2/pruebasPronosticadores ./pruebasPronosticadores
+       cp -r D:/programas\ detrabajo/intellij\ proyecto\ PP2/pruebasPronosticadoresVacia ./pruebasPronosticadoresVacia
         
     - name: Build with Gradle
       run: ./gradlew build
