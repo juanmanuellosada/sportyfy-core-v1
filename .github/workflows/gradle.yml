@@ -37,7 +37,7 @@ jobs:
             mkdir -p ./pruebasPronosticadores
             cp -r "D:/programas detrabajo/intellij proyecto PP2/pruebasPronosticadores" ./pruebasPronosticadores
             mkdir -p ./pruebasPronosticadoresVacia
-            cp -r "D:/programas detrabajo/intellij proyecto PP2/pruebasPronosticadoresVacia" ./pruebasPronosticadoresVaciarunrun
+            cp -r "D:/programas detrabajo/intellij proyecto PP2/pruebasPronosticadoresVacia" ./pruebasPronosticadoresVacia
               
     - name: Build with Gradle
       run: ./gradlew build
