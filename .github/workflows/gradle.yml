@@ -32,9 +32,9 @@ jobs:
 
     - name: Copy folders for tests
       run: |
-          cp -r "D:/programas detrabajo/intellij proyecto PP2/pruebasArchivoInvalido" ./pruebasArchivoInvalido
-          cp -r "D:/programas detrabajo/intellij proyecto PP2/pruebasPronosticadores" ./pruebasPronosticadores
-          cp -r "D:/programas detrabajo/intellij proyecto PP2/pruebasPronosticadoresVacia" ./pruebasPronosticadoresVacia
+          cp -r "D:/programas\detrabajo/intellij\proyecto\PP2/pruebasArchivoInvalido" ./pruebasArchivoInvalido
+          cp -r "D:/programas\detrabajo/intellij\proyecto\PP2/pruebasPronosticadores" ./pruebasPronosticadores
+          cp -r "D:/programas\detrabajo/intellij\proyecto\PP2/pruebasPronosticadoresVacia" ./pruebasPronosticadoresVacia
               
     - name: Build with Gradle
       run: ./gradlew build
