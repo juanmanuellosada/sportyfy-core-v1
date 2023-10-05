@@ -29,15 +29,6 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-
-    - name: Copy folders for tests
-      run: |
-            mkdir -p ./pruebasArchivoInvalido
-            cp -r "D:/programas detrabajo/intellij proyecto PP2/pruebasArchivoInvalido" ./pruebasArchivoInvalido
-            mkdir -p ./pruebasPronosticadores
-            cp -r "D:/programas detrabajo/intellij proyecto PP2/pruebasPronosticadores" ./pruebasPronosticadores
-            mkdir -p ./pruebasPronosticadoresVacia
-            cp -r "D:/programas detrabajo/intellij proyecto PP2/pruebasPronosticadoresVacia" ./pruebasPronosticadoresVacia
               
     - name: Build with Gradle
       run: ./gradlew build
