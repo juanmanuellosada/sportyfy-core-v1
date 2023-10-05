@@ -21,16 +21,18 @@ import java.util.stream.Collectors;
 public class BuscadorPronosticadores {
     private Set<Pronosticador> pronosticadores;
 
-    public BuscadorPronosticadores(String ruta) {
-        try {
+    public BuscadorPronosticadores(String ruta) throws FileNotFoundException,IllegalArgumentException {
+        /*try {
             this.pronosticadores = buscarPronosticadores(ruta);
-        } catch (Exception e) {
-            Logger.getLogger("BuscadorPronosticadores").severe("Ocurrio un error al buscar los pronosticadores");
         }
+        catch (Exception e) {
+            Logger.getLogger("BuscadorPronosticadores").severe("Ocurrio un error al buscar los pronosticadores");
+        }*/
+        this.pronosticadores=buscarPronosticadores(ruta);
 
     }
 
-    public Set<Pronosticador> buscarPronosticadores(String ruta) throws FileNotFoundException {
+    public Set<Pronosticador> buscarPronosticadores(String ruta) throws FileNotFoundException,IllegalArgumentException {
         Set<Pronosticador> pronosticadores = new HashSet<>();
 
         File directorio = new File(ruta);
@@ -48,6 +50,9 @@ public class BuscadorPronosticadores {
                     if (archivo.isFile() && archivo.getName().endsWith(".jar")) {
                         // Agregamos los pronosticadores del archivo
                         pronosticadores.addAll(obtenerPronosticadoresDesdeJar(archivo));
+                    }
+                    else{
+                        throw new IllegalArgumentException("Hay extensiones de archivo inválidas (no es .jar)");
                     }
                 }
             }

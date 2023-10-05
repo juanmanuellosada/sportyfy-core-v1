@@ -7,7 +7,6 @@ import sportyfy.core.iniciador.IniciadorSportyfyCore;
 import sportyfy.core.modelo.SportyfyCore;
 
 import java.io.FileNotFoundException;
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -26,7 +25,7 @@ public class US1 {
       private static Pronostico pronosticoEquipoSinPartidos;
 
       @BeforeAll
-      public static void Escenario() {
+      public static void Escenario() throws FileNotFoundException,IllegalArgumentException {
             IniciadorSportyfyCore iniciador = new IniciadorSportyfyCore();
             SportyfyCore core = iniciador.iniciar("datosFutbol/equipos/equipos.json",
                         "datosFutbol/ultimos_resultados/", "src/pronosticadores");
@@ -52,7 +51,7 @@ public class US1 {
 
       @Test
       @Order(1)
-      @DisplayName("Prueba Pronóstico Efectivo del Partido")
+      @DisplayName("Pronóstico efectivo del partido (hay ganador)")
       public void CA1_PronosticoEfectivo() {
             assertEquals("River Plate",
                         pronosticoEfectivo.getEquipoGanador().getNombre());
@@ -60,14 +59,14 @@ public class US1 {
 
       @Test
       @Order(2)
-      @DisplayName("Prueba Pronóstico de Empate para un Partido")
+      @DisplayName("Pronóstico de empate para el partido")
       public void CA2_PronosticoEmpate() {
             assertNull(pronosticoEmpate.getEquipoGanador());
       }
 
       @Test
       @Order(3)
-      @DisplayName("Prueba No Se Encuentran Partidos de Equipo (Gana el Otro Equipo con Partidos)")
+      @DisplayName("No se encuentran partidos de equipo (gana el otro equipo con partidos)")
       public void CA3_NoSeEncuentranPartidosDeEquipo() {
             assertEquals(GimnasiaDeLaPlata,
                         pronosticoEquipoSinPartidos.getEquipoGanador());
@@ -75,7 +74,7 @@ public class US1 {
 
       @Test
       @Order(4)
-      @DisplayName("Prueba No Existe Información Sobre los Partidos (RuntimeException)")
+      @DisplayName("No existe información sobre los partidos (RuntimeException)")
       public void CA4_NoHayInfoDePartidos() {
             List<Partido> partidosVacios = new ArrayList<>();
             assertThrows(RuntimeException.class, () -> {

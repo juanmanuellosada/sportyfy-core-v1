@@ -6,11 +6,13 @@ import sportyfy.core.constructores.ConstructorEquipos;
 import sportyfy.core.constructores.ConstructorPartidos;
 import sportyfy.core.entidades.Equipo;
 import sportyfy.core.entidades.Partido;
+
+import java.io.FileNotFoundException;
 import java.util.List;
 
 public class IniciadorSportyfyCore {
 
-    public SportyfyCore iniciar(String rutaArchivoEquipos, String rutaCarpetaPartidos, String rutaPronosticadores) {
+    public SportyfyCore iniciar(String rutaArchivoEquipos, String rutaCarpetaPartidos, String rutaPronosticadores) throws FileNotFoundException,IllegalArgumentException {
         ConstructorEquipos constructorEquipos = new ConstructorEquipos();
         List<Equipo> equipos = constructorEquipos.crearEquipos(rutaArchivoEquipos);
 
