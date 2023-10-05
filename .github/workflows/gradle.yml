@@ -9,7 +9,7 @@ name: Java CI with Gradle
 
 defaults:
   run:
-    working-directory: D:/programas detrabajo/intellij proyecto PP2
+    working-directory: $GITHUB_WORKSPACE/D:/programas detrabajo/intellij proyecto PP2
 
 on:
   push:
