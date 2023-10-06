@@ -1,4 +1,4 @@
-package sportyfy.core.modelo;
+package sportyfy.core.core;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import sportyfy.core.BuscadorPronosticadores;

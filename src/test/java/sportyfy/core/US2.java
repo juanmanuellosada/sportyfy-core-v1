@@ -2,7 +2,7 @@ package sportyfy.core;
 
 import org.junit.jupiter.api.*;
 import sportyfy.core.iniciador.IniciadorSportyfyCore;
-import sportyfy.core.modelo.SportyfyCore;
+import sportyfy.core.core.SportyfyCore;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

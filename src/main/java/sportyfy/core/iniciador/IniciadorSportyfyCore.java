@@ -1,7 +1,7 @@
 package sportyfy.core.iniciador;
 
 import sportyfy.core.BuscadorPronosticadores;
-import sportyfy.core.modelo.SportyfyCore;
+import sportyfy.core.core.SportyfyCore;
 import sportyfy.core.constructores.ConstructorEquipos;
 import sportyfy.core.constructores.ConstructorPartidos;
 import sportyfy.core.entidades.Equipo;
