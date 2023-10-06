@@ -5,37 +5,42 @@ import sportyfy.core.BuscadorPronosticadores;
 import sportyfy.core.Pronosticador;
 import sportyfy.core.Pronostico;
 import sportyfy.core.entidades.Equipo;
-import sportyfy.core.entidades.Partido;
+import sportyfy.core.entidades.PartidoAnterior;
+import sportyfy.core.entidades.PartidoFuturo;
 
 import java.util.List;
 import java.util.Observable;
-import java.util.Optional;
+import java.util.Set;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class SportyfyCore extends Observable {
 
-    private BuscadorPronosticadores buscadorPronosticadores;
+    private Set<Pronosticador> pronosticadores;
     private Pronostico pronosticoActual;
     private List<Equipo> equipos;
-    private List<Partido> partidos;
+    private List<PartidoAnterior> partidosAnteriores;
 
     /* Puedo contruir el modelo sin tener pronóstico actual */
-    public SportyfyCore(BuscadorPronosticadores buscadorPronosticadores, List<Equipo> equipos, List<Partido> partidos) {
-        this.buscadorPronosticadores = buscadorPronosticadores;
+    public SportyfyCore(Set<Pronosticador> pronosticadores, List<Equipo> equipos, List<PartidoAnterior> partidosAnteriores) {
+        this.pronosticadores = pronosticadores;
         this.equipos = equipos;
-        this.partidos = partidos;
+        this.partidosAnteriores = partidosAnteriores;
     }
 
-    public void pronosticar(Equipo equipoLocal, Equipo equipoVisitante, List<Partido> partidosAnteriores, String nombrePronosticador) {
-        Optional<Pronosticador> pronosticador = buscadorPronosticadores.buscarPronosticador(nombrePronosticador);
-        if (pronosticador.isPresent()) {
-            pronosticoActual = pronosticador.get().pronosticar(equipoLocal, equipoVisitante, partidosAnteriores);
+    public void pronosticar(PartidoFuturo partidoFuturo, List<PartidoAnterior> partidosAnteriores, String nombrePronosticador) {
+        BuscadorPronosticadores buscadorPronosticadores = new BuscadorPronosticadores();
+        Pronosticador pronosticador = buscadorPronosticadores.buscarPronosticador(pronosticadores, nombrePronosticador);
+        if (pronosticador != null) {
+            pronosticoActual = pronosticador.pronosticar(partidoFuturo.getEquipoLocal(), partidoFuturo.getEquipoVisitante(), partidosAnteriores);
             setChanged();
             notifyObservers();
         } else {
-            throw new RuntimeException("No se ha encontrado el pronosticador " + nombrePronosticador);
+            throw new IllegalArgumentException("No se encontró el pronosticador con nombre " + nombrePronosticador);
         }
     }
+
+
+
 
 }

@@ -14,16 +14,8 @@ import java.util.logging.Logger;
 @Data
 public class ConstructorEquipos {
 
-    public List<Equipo> crearEquipos(String ruta) {
+    public List<Equipo> crearEquipos(String json) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        List<Equipo> equipos = null;
-
-        try {
-            equipos = mapper.readValue(new File(ruta), new TypeReference<List<Equipo>>(){});
-        } catch (IOException e) {
-            Logger.getLogger("ConstructorEquipos").severe("No se pudo cargar el archivo de equipos");
-        }
-
-        return equipos;
+        return mapper.readValue(json, new TypeReference<List<Equipo>>() {});
     }
 }

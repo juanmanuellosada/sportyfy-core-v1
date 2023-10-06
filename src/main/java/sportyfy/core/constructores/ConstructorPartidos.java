@@ -3,7 +3,7 @@ package sportyfy.core.constructores;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import sportyfy.core.entidades.Equipo;
-import sportyfy.core.entidades.Partido;
+import sportyfy.core.entidades.PartidoAnterior;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,29 +11,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Logger;
 
 public class ConstructorPartidos {
 
-    public List<Partido> crearPartidos(String rutaCarpeta, List<Equipo> equipos) {
-        List<Partido> partidos = new ArrayList<>();
+    public List<PartidoAnterior> crearPartidos(List<String> jsonsPartidosTotales, List<Equipo> equipos) throws IOException {
+        List<PartidoAnterior> partidosAnteriores = new ArrayList<>();
 
-        for (Equipo equipo : equipos) {
-            String nombreArchivo = "ultimos_enfrentamientos_" + equipo.getId() + ".json";
-            File archivo = new File(rutaCarpeta, nombreArchivo);
-
-            if (archivo.exists()) {
-                List<Partido> partidosEquipo = cargarPartidosDesdeArchivo(archivo, equipos);
-                partidos.addAll(partidosEquipo);
-            }
+        for (String jsonPartidos : jsonsPartidosTotales) {
+            partidosAnteriores.addAll(cargarPartidosDesdeArchivo(new File(jsonPartidos), equipos));
         }
 
-        return partidos;
+        return partidosAnteriores;
     }
 
-    private List<Partido> cargarPartidosDesdeArchivo(File archivo, List<Equipo> equipos) {
+    private List<PartidoAnterior> cargarPartidosDesdeArchivo(File archivo, List<Equipo> equipos) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        List<Partido> partidos = new ArrayList<>();
+        List<PartidoAnterior> partidosAnteriores = new ArrayList<>();
 
         // Crear un mapa de equipos por ID para una búsqueda eficiente
         Map<Integer, Equipo> equiposPorId = new HashMap<>();
@@ -41,24 +34,21 @@ public class ConstructorPartidos {
             equiposPorId.put(equipo.getId(), equipo);
         }
 
-        try {
-            List<Partido> partidosArchivo = mapper.readValue(archivo, new TypeReference<List<Partido>>() {});
+        List<PartidoAnterior> partidosArchivo = mapper.readValue(archivo.getName(), new TypeReference<List<PartidoAnterior>>() {});
 
-            for (Partido partido : partidosArchivo) {
-                // Buscar los equipos en el mapa por su ID
-                Equipo equipoLocal = equiposPorId.get(partido.getEquipoLocal().getId());
-                Equipo equipoVisitante = equiposPorId.get(partido.getEquipoVisitante().getId());
+        for (PartidoAnterior partidoAnterior : partidosArchivo) {
+            // Buscar los equipos en el mapa por su ID
+            Equipo equipoLocal = equiposPorId.get(partidoAnterior.getEquipoLocal().getId());
+            Equipo equipoVisitante = equiposPorId.get(partidoAnterior.getEquipoVisitante().getId());
 
-                if (equipoLocal != null && equipoVisitante != null) {
-                    partido.setEquipoLocal(equipoLocal);
-                    partido.setEquipoVisitante(equipoVisitante);
-                    partidos.add(partido);
-                }
+            if (equipoLocal != null && equipoVisitante != null) {
+                partidoAnterior.setEquipoLocal(equipoLocal);
+                partidoAnterior.setEquipoVisitante(equipoVisitante);
+                partidosAnteriores.add(partidoAnterior);
             }
-        } catch (IOException e) {
-            Logger.getLogger("ConstructorPartidos").severe("No se pudo cargar el archivo de partidos");
         }
 
-        return partidos;
+
+        return partidosAnteriores;
     }
 }

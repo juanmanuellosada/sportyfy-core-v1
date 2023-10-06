@@ -7,7 +7,7 @@ import lombok.ToString;
 @Data
 @EqualsAndHashCode
 @ToString
-public class Partido {
+public class PartidoAnterior {
     private Equipo equipoLocal;
     private Equipo equipoVisitante;
     private Integer golesLocal;

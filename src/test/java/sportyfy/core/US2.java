@@ -5,6 +5,7 @@ import sportyfy.core.iniciador.IniciadorSportyfyCore;
 import sportyfy.core.core.SportyfyCore;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -20,13 +21,11 @@ public class US2 {
     private static SportyfyCore coreArchivoInvalido;
 
     @BeforeAll
-    public static void Escenario() throws FileNotFoundException,IllegalArgumentException {
+    public static void Escenario() throws IOException, IllegalArgumentException {
         iniciador = new IniciadorSportyfyCore();
-        coreConPronosticadores = iniciador.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/",
-                "src/test/java/carpetasDePrueba/pruebasPronosticadores");
+        coreConPronosticadores = iniciador.iniciar("src/test/java/carpetasDePrueba/pruebasPronosticadores");
 
-        coreCarpetaVacia = iniciador.iniciar("datosFutbol/equipos/equipos.json", "datosFutbol/ultimos_resultados/",
-                "src/test/java/carpetasDePrueba/pruebasPronosticadoresVacia");
+        coreCarpetaVacia = iniciador.iniciar("src/test/java/carpetasDePrueba/pruebasPronosticadoresVacia");
 
     }
 
@@ -46,8 +45,7 @@ public class US2 {
     public void CA2_pruebaExtensionInvalida() {
         assertThrows(IllegalArgumentException.class, ()->{
             iniciador = new IniciadorSportyfyCore();
-            coreArchivoInvalido = iniciador.iniciar("datosFutbol/equipos/equipos.json","datosFutbol/ultimos_resultados/",
-                    "src/test/java/carpetasDePrueba/pruebasArchivoInvalido");
+            coreArchivoInvalido = iniciador.iniciar("src/test/java/carpetasDePrueba/pruebasArchivoInvalido");
         });
 
     }
@@ -64,8 +62,7 @@ public class US2 {
     @DisplayName("Carpeta inexistente")
     public void CA4_carpetaInexistente() {
        assertThrows(FileNotFoundException.class,()->{
-          SportyfyCore coreCarpetaInexistente = iniciador.iniciar("datosFutbol/equipos/equipos.json","datosFutbol/ultimos_resultados/",
-                  "src/test/java/carpetasDePrueba/carpetaNoExistente");
+          SportyfyCore coreCarpetaInexistente = iniciador.iniciar("src/test/java/carpetasDePrueba/carpetaNoExistente");
        });
     }
 
@@ -78,8 +75,8 @@ public class US2 {
     }
 
     private List<String> obtenerNombresPronosticadores(SportyfyCore core) {
-        return core.getBuscadorPronosticadores()
-                .obtenerNombresPronosticadores(core.getBuscadorPronosticadores().getPronosticadores());
+        BuscadorPronosticadores buscadorPronosticadores = new BuscadorPronosticadores();
+        return buscadorPronosticadores.obtenerNombresPronosticadores(core.getPronosticadores());
     }
 
 

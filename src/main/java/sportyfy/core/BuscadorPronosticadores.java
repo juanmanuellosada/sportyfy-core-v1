@@ -19,20 +19,7 @@ import java.util.stream.Collectors;
 
 @Data
 public class BuscadorPronosticadores {
-    private Set<Pronosticador> pronosticadores;
-
-    public BuscadorPronosticadores(String ruta) throws FileNotFoundException,IllegalArgumentException {
-        /*try {
-            this.pronosticadores = buscarPronosticadores(ruta);
-        }
-        catch (Exception e) {
-            Logger.getLogger("BuscadorPronosticadores").severe("Ocurrio un error al buscar los pronosticadores");
-        }*/
-        this.pronosticadores=buscarPronosticadores(ruta);
-
-    }
-
-    public Set<Pronosticador> buscarPronosticadores(String ruta) throws FileNotFoundException,IllegalArgumentException {
+    public Set<Pronosticador> buscarPronosticadores(String ruta) throws FileNotFoundException {
         Set<Pronosticador> pronosticadores = new HashSet<>();
 
         File directorio = new File(ruta);
@@ -50,9 +37,6 @@ public class BuscadorPronosticadores {
                     if (archivo.isFile() && archivo.getName().endsWith(".jar")) {
                         // Agregamos los pronosticadores del archivo
                         pronosticadores.addAll(obtenerPronosticadoresDesdeJar(archivo));
-                    }
-                    else if(!archivo.getName().endsWith(".gitkeep")) {
-                        throw new IllegalArgumentException("Hay extensiones de archivo inválidas (no es .jar)");
                     }
                 }
             }
@@ -93,6 +77,7 @@ public class BuscadorPronosticadores {
                 } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException
                         | InstantiationException | InvocationTargetException e) {
                     Logger logger = Logger.getLogger("BuscadorPronosticadores");
+
                     if(e instanceof ClassNotFoundException) {
                         logger.severe("No se encontro la clase " + nombreClase);
                     } else if(e instanceof NoSuchMethodException) {
@@ -114,8 +99,12 @@ public class BuscadorPronosticadores {
         return pronosticadores;
     }
 
-    public Optional<Pronosticador> buscarPronosticador(String nombre) {
-        return pronosticadores.stream().filter(pronosticador -> pronosticador.getClass().getSimpleName().equals(nombre)).findFirst();
+    public Pronosticador buscarPronosticador(Set<Pronosticador> pronosticadores, String nombre) {
+
+        return pronosticadores.stream()
+                .filter(p -> p.getClass().getSimpleName().equals(nombre))
+                .findFirst()
+                .orElse(null);
     }
 
     public List<String> obtenerNombresPronosticadores(Set<Pronosticador> pronosticadores) {

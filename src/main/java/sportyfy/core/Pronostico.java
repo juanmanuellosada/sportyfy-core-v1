@@ -9,7 +9,4 @@ import sportyfy.core.entidades.Equipo;
 @AllArgsConstructor
 public class Pronostico {
     private Equipo equipoGanador;
-    public boolean esEmpate(){
-        return false;
-    }
 }
