@@ -53,15 +53,15 @@ public class US1 {
       @Order(1)
       @DisplayName("Pronóstico efectivo del partido (hay ganador)")
       public void CA1_PronosticoEfectivo() {
-            assertEquals("River Plate",
-                        pronosticoEfectivo.getEquipoGanador().getNombre());
+            assertEquals("River Plate", pronosticoEfectivo.getEquipoGanador().getNombre());
       }
 
       @Test
       @Order(2)
-      @DisplayName("Pronóstico de empate para el partido")
+      @DisplayName("Pronóstico de empate para el partido (devuelve un PronosticoNull) ")
       public void CA2_PronosticoEmpate() {
-            assertNull(pronosticoEmpate.getEquipoGanador());
+            assertEquals(pronosticoEmpate.getClass(),PronosticoNull.class);
+            assertTrue(pronosticoEmpate.esEmpate());
       }
 
       @Test
