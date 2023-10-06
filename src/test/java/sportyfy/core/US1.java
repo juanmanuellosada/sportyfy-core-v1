@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class US1 {
-/*
+
       private static Equipo GimnasiaDeLaPlata;
       private static Equipo RiverPlate;
       private static Pronosticador pronosticador;
@@ -78,13 +78,4 @@ public class US1 {
                               partidosVacios);
             });
       }
-      */
-
-      @Test
-      @Order(1)
-      @DisplayName("Test Falso")
-        public void CA1_PronosticoEfectivo() {
-            assertEquals(1, 1);
-      }
-
 }
