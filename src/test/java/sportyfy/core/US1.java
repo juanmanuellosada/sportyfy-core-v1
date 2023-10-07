@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class US1 {
 
-      /*private static Equipo GimnasiaDeLaPlata;
+      private static Equipo GimnasiaDeLaPlata;
       private static Equipo RiverPlate;
       private static Pronosticador pronosticador;
       private static Pronostico pronosticoEfectivo;
@@ -35,14 +35,14 @@ public class US1 {
             // Pronósticos
             pronosticoEfectivo = pronosticador.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, RiverPlate),
                     partidosAnteriores);
-            pronosticoEmpate = pronosticador.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, RiverPlate), partidosAnteriores);
+            pronosticoEmpate = pronosticador.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, GimnasiaDeLaPlata), partidosAnteriores);
 
             // Equipo sin partidos
             Equipo equipoSinPartidos = new Equipo();
             equipoSinPartidos.setNombre("EquipoSinPartidos");
 
             // Pronóstico donde un equipo no tiene partidos (gana el otro)
-            pronosticoEquipoSinPartidos = pronosticador.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, RiverPlate), partidosAnteriores);
+            pronosticoEquipoSinPartidos = pronosticador.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, equipoSinPartidos), partidosAnteriores);
       }
 
       @Test
@@ -56,7 +56,7 @@ public class US1 {
       @Order(2)
       @DisplayName("Pronóstico de empate para el partido (devuelve un PronosticoNull) ")
       public void CA2_PronosticoEmpate() {
-            assertEquals(pronosticoEmpate.getClass(), PronosticoNull.class);
+              assertTrue(pronosticoEmpate instanceof PronosticoNull);
       }
 
       @Test
@@ -76,12 +76,5 @@ public class US1 {
                   Pronostico pronosticoPartidosVacios = pronosticador.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, RiverPlate),
                               partidosVacios);
             });
-      }*/
-
-        @Test
-        @Order(1)
-        @DisplayName("Pronóstico efectivo del partido (hay ganador)")
-        public void CA1_PronosticoEfectivo() {
-            assertEquals(1,1);
-        }
+      }
 }

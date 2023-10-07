@@ -28,7 +28,7 @@ public class IniciadorSportyfyCore {
 
         Set<Pronosticador> pronosticadores = new BuscadorPronosticadores().buscarPronosticadores(rutaPronosticadores);
 
-        Pronosticador pronosticadorFutbol = new SelectorPronosticadores(pronosticadores).encontrarPronosticador("PronosticadorFutbol");
+        Pronosticador pronosticadorFutbol = new SelectorPronosticadores(pronosticadores).seleccionarPronosticador(pronosticadores.stream().findFirst().get().getClass().getSimpleName());
 
         return new SportyfyCore(pronosticadorFutbol, equipos, partidoJugados);
     }
