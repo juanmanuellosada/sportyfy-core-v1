@@ -1,18 +1,16 @@
-package sportyfy.core.constructores;
+package sportyfy.core.parsers;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
 
-import sportyfy.core.entidades.Equipo;
+import sportyfy.core.entidades.equipo.Equipo;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import java.util.logging.Logger;
 
 @Data
-public class ConstructorEquipos {
+public class EquiposParser {
 
     public List<Equipo> crearEquipos(String json) throws IOException {
         ObjectMapper mapper = new ObjectMapper();

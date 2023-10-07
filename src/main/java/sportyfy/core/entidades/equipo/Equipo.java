@@ -1,4 +1,4 @@
-package sportyfy.core.entidades;
+package sportyfy.core.entidades.equipo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

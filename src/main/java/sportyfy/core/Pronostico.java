@@ -3,7 +3,7 @@ package sportyfy.core;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import sportyfy.core.entidades.Equipo;
+import sportyfy.core.entidades.equipo.Equipo;
 
 @Data
 @AllArgsConstructor

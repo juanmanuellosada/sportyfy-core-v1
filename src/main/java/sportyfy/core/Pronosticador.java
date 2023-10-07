@@ -2,11 +2,12 @@ package sportyfy.core;
 
 import java.util.List;
 
-import sportyfy.core.entidades.Equipo;
-import sportyfy.core.entidades.PartidoAnterior;
+import sportyfy.core.Pronostico;
+import sportyfy.core.entidades.partido.PartidoFuturo;
+import sportyfy.core.entidades.partido.PartidoJugado;
 
 public interface Pronosticador {
-    public Pronostico pronosticar(Equipo equipoLocal, Equipo equipoVisitante, List<PartidoAnterior> partidosAnteriores);
+    public Pronostico pronosticar(PartidoFuturo partidoFuturo, List<PartidoJugado> partidosJugados);
 
     public String obtenerDeporte();
 }

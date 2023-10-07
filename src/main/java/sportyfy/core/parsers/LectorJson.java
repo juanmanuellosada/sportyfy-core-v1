@@ -1,4 +1,4 @@
-package sportyfy.core.constructores;
+package sportyfy.core.parsers;
 
 import java.io.File;
 import java.io.IOException;
