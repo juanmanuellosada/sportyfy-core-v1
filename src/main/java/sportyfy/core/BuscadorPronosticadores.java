@@ -97,18 +97,4 @@ public class BuscadorPronosticadores {
 
         return pronosticadores;
     }
-
-    public Pronosticador buscarPronosticador(Set<Pronosticador> pronosticadores, String nombre) {
-
-        return pronosticadores.stream()
-                .filter(p -> p.getClass().getSimpleName().equals(nombre))
-                .findFirst()
-                .orElse(null);
-    }
-
-    public List<String> obtenerNombresPronosticadores(Set<Pronosticador> pronosticadores) {
-        return pronosticadores.stream()
-                .map(pronosticador -> pronosticador.getClass().getSimpleName())
-                .collect(Collectors.toList());
-    }
 }
