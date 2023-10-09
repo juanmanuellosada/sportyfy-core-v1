@@ -69,7 +69,7 @@ public class US1 {
 
       @Test
       @Order(4)
-      @DisplayName("No existe información sobre los partidos (RuntimeException)")
+      @DisplayName("No existe información sobre los partidos (IllegalArgumentException)")
       public void CA4_NoHayInfoDePartidos() {
             List<PartidoJugado> partidosVacios = new ArrayList<>();
             assertThrows(IllegalArgumentException.class, () -> {
