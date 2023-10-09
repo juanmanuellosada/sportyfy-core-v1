@@ -72,7 +72,7 @@ public class US1 {
       @DisplayName("No existe información sobre los partidos (RuntimeException)")
       public void CA4_NoHayInfoDePartidos() {
             List<PartidoJugado> partidosVacios = new ArrayList<>();
-            assertThrows(RuntimeException.class, () -> {
+            assertThrows(IllegalArgumentException.class, () -> {
                   Pronostico pronosticoPartidosVacios = pronosticador.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, RiverPlate),
                               partidosVacios);
             });
