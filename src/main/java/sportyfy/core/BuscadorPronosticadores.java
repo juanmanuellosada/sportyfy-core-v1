@@ -37,6 +37,9 @@ public class BuscadorPronosticadores {
                         // Agregamos los pronosticadores del archivo
                         pronosticadores.addAll(obtenerPronosticadoresDesdeJar(archivo));
                     }
+                    else if(archivo.isFile() && !archivo.getName().endsWith(".gitkeep")){
+                      throw new IllegalArgumentException("La extensión del archivo encontrado no es .jar");
+                    }
                 }
             }
         }

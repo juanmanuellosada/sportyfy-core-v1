@@ -23,10 +23,10 @@ public class US2 {
 
     @Test
     @Order(1)
-    @DisplayName("Carpeta con un solo archivo JAR válido")
-    public void CA1_CarpetaConUnSoloArchivoJARValido() throws IOException {
+    @DisplayName("Carpeta con un Pronosticador")
+    public void CA1_CarpetaConPronosticadorValido() throws IOException {
         SportyfyCore core = iniciador.iniciar("src/test/java/carpetasDePrueba/pronosticadorFutbol");
-        assertNotNull(core.getPronosticador());
+        assertTrue(core.getPronosticador() instanceof Pronosticador);
     }
 
     @Test
@@ -41,18 +41,18 @@ public class US2 {
 
     @Test
     @Order(3)
-    @DisplayName("Carpeta con archivos no JAR")
+    @DisplayName("Carpeta con archivo de extensión inválida (no es JAR)")
     public void CA3_CarpetaConArchivosNoJAR() throws IOException {
         // Arrojaría NoSuchElementException porque no hay ningún pronosticador
-        assertThrows(NoSuchElementException.class, () -> {
+        assertThrows(IllegalArgumentException.class, () -> {
             SportyfyCore core = iniciador.iniciar("src/test/java/carpetasDePrueba/ArchivoInvalido");
         });
     }
 
     @Test
     @Order(4)
-    @DisplayName("Carpeta con un archivo JAR inválido (sin Pronosticadores)")
-    public void CA4_CarpetaConArchivoJARInvalido() throws IOException {
+    @DisplayName("Carpeta con JAR pero no es Pronosticador")
+    public void CA4_CarpetaConJARNoPronosticador() throws IOException {
         // Arrojaría NoSuchElementException porque no hay ningún pronosticador
         assertThrows(NoSuchElementException.class, () -> {
             SportyfyCore core = iniciador.iniciar("src/test/java/carpetasDePrueba/JARNoPronosticador");
@@ -61,7 +61,7 @@ public class US2 {
 
     @Test
     @Order(5)
-    @DisplayName("Carpeta que no existe")
+    @DisplayName("Carpeta inexistente")
     public void CA5_CarpetaNoExiste() {
         assertThrows(FileNotFoundException.class, () -> {
             SportyfyCore core = iniciador.iniciar("src/test/java/carpetasDePrueba/carpetaInexistente");
