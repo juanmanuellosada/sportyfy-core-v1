@@ -26,7 +26,7 @@ public class US2 {
     @DisplayName("Carpeta con un Pronosticador")
     public void CA1_CarpetaConPronosticadorValido() throws IOException {
         SportyfyCore core = iniciador.iniciar("src/test/java/carpetasDePrueba/pronosticadorFutbol");
-        assertTrue(core.getPronosticador() instanceof Pronosticador);
+        assertNotNull(core.getPronosticador());
     }
 
     @Test
@@ -42,8 +42,7 @@ public class US2 {
     @Test
     @Order(3)
     @DisplayName("Carpeta con archivo de extensión inválida (no es JAR)")
-    public void CA3_CarpetaConArchivosNoJAR() throws IOException {
-        // Arrojaría NoSuchElementException porque no hay ningún pronosticador
+    public void CA3_CarpetaConArchivosNoJAR() {
         assertThrows(IllegalArgumentException.class, () -> {
             SportyfyCore core = iniciador.iniciar("src/test/java/carpetasDePrueba/ArchivoInvalido");
         });
@@ -52,8 +51,7 @@ public class US2 {
     @Test
     @Order(4)
     @DisplayName("Carpeta con JAR pero no es Pronosticador")
-    public void CA4_CarpetaConJARNoPronosticador() throws IOException {
-        // Arrojaría NoSuchElementException porque no hay ningún pronosticador
+    public void CA4_CarpetaConJARNoPronosticador() {
         assertThrows(NoSuchElementException.class, () -> {
             SportyfyCore core = iniciador.iniciar("src/test/java/carpetasDePrueba/JARNoPronosticador");
         });
