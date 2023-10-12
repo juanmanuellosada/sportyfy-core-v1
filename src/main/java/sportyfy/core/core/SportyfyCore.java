@@ -27,13 +27,10 @@ public class SportyfyCore extends Observable {
         this.partidosJugados = partidosJugados;
     }
 
-    public void pronosticar(PartidoFuturo partidoFuturo, List<PartidoJugado> partidosJugados) {
+    public void pronosticar(PartidoFuturo partidoFuturo) {
         pronosticoActual = pronosticador.pronosticar(partidoFuturo, partidosJugados);
         setChanged();
         notifyObservers();
     }
-
-
-
 
 }
