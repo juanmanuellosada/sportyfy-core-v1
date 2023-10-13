@@ -11,8 +11,4 @@ public class PartidoFuturo extends Partido {
         super(equipoLocal, equipoVisitante);
     }
 
-    @Override
-    public boolean tieneGoles() {
-        return false;
-    }
 }

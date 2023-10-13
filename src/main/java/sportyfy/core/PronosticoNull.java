@@ -1,9 +1,7 @@
 package sportyfy.core;
 
-import sportyfy.core.Pronostico;
-
 public class PronosticoNull extends Pronostico {
-    public PronosticoNull(){
+    public PronosticoNull() {
         super(null);
     }
 }
