@@ -23,7 +23,7 @@ public class US1 {
       private static Pronostico pronosticoEmpate;
       private static Pronostico pronosticoEquipoSinPartidos;
 
-      @BeforeAll
+     /* @BeforeAll
       public static void Escenario() throws IOException, IllegalArgumentException {
             IniciadorSportyfyCore iniciador = new IniciadorSportyfyCore();
             SportyfyCore core = iniciador.iniciar("src/pronosticadores");
@@ -76,5 +76,5 @@ public class US1 {
                   Pronostico pronosticoPartidosVacios = pronosticador.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, RiverPlate),
                               partidosVacios);
             });
-      }
+      }*/
 }

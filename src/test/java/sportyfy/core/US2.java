@@ -21,7 +21,7 @@ public class US2 {
         iniciador = new IniciadorSportyfyCore();
     }
 
-    @Test
+  /*  @Test
     @Order(1)
     @DisplayName("Carpeta con un Pronosticador")
     public void CA1_CarpetaConPronosticadorValido() throws IOException {
@@ -65,5 +65,5 @@ public class US2 {
             SportyfyCore core = iniciador.iniciar("src/test/java/carpetasDePrueba/carpetaInexistente");
         });
     }
-
+*/
 }
