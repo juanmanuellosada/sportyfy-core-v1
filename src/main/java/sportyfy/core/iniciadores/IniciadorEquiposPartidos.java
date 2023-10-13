@@ -15,7 +15,8 @@ public class IniciadorEquiposPartidos {
         PARTIDOS
     }
 
-    public static List<?> iniciar(String rutaArchivoEquipos, String rutaCarpetaPartidosJugados, List<Equipo> equipos, TipoInicializacion tipo) throws IOException {
+    public static List<?> iniciar(String rutaArchivoEquipos, String rutaCarpetaPartidosJugados, List<Equipo> equipos,
+            TipoInicializacion tipo) throws IOException {
         LectorJson lectorJson = new LectorJson();
         EquiposParser equiposParser = new EquiposParser();
         PartidosParser partidosParser = new PartidosParser();
