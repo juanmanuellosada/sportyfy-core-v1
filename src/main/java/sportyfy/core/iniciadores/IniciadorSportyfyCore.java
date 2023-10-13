@@ -22,13 +22,20 @@ public class IniciadorSportyfyCore {
         this.rutaArchivoEquipos = leerProperties("rutaArchivoEquipos");
         this.rutaCarpetaPartidosJugados = leerProperties("rutaCarpetaPartidosJugados");
     }
+
+    // Agrego el SuppressWarnings por el casteo del método iniciar
+    @SuppressWarnings("unchecked")
     public SportyfyCore iniciar(String rutaPronosticadores) throws IOException {
-        List<Equipo> equipos = (List<Equipo>) IniciadorEquiposPartidos.iniciar(rutaArchivoEquipos, rutaCarpetaPartidosJugados, null, IniciadorEquiposPartidos.TipoInicializacion.EQUIPOS);
-        List<PartidoJugado> partidoJugados = (List<PartidoJugado>) IniciadorEquiposPartidos.iniciar(rutaArchivoEquipos, rutaCarpetaPartidosJugados, equipos, IniciadorEquiposPartidos.TipoInicializacion.PARTIDOS);
+        List<Equipo> equipos = (List<Equipo>) IniciadorEquiposPartidos.iniciar(rutaArchivoEquipos,
+                rutaCarpetaPartidosJugados, null, IniciadorEquiposPartidos.TipoInicializacion.EQUIPOS);
+
+        List<PartidoJugado> partidoJugados = (List<PartidoJugado>) IniciadorEquiposPartidos.iniciar(rutaArchivoEquipos,
+                rutaCarpetaPartidosJugados, equipos, IniciadorEquiposPartidos.TipoInicializacion.PARTIDOS);
 
         Set<Pronosticador> pronosticadores = new BuscadorPronosticadores().buscarPronosticadores(rutaPronosticadores);
 
-        Pronosticador pronosticadorFutbol = new SelectorPronosticadores(pronosticadores).seleccionarPronosticador(pronosticadores.stream().findFirst().get().getClass().getSimpleName());
+        Pronosticador pronosticadorFutbol = new SelectorPronosticadores(pronosticadores)
+                .seleccionarPronosticador(pronosticadores.stream().findFirst().get().getClass().getSimpleName());
 
         return new SportyfyCore(pronosticadorFutbol, equipos, partidoJugados);
     }
