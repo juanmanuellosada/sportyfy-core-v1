@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"sportyfy.core"},{"l":"sportyfy.core.core"},{"l":"sportyfy.core.entidades.equipo"},{"l":"sportyfy.core.entidades.partido"},{"l":"sportyfy.core.iniciadores"},{"l":"sportyfy.core.parsers"}]
