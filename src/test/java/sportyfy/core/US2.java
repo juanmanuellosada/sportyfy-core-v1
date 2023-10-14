@@ -25,7 +25,7 @@ public class US2 {
     @DisplayName("Carpeta con un Pronosticador válido")
     public void CA1_CarpetaConPronosticadorValido() throws IOException {
         SportyfyCore core = iniciador.iniciar("src/test/java/carpetasDePrueba/pronosticadorFutbol");
-        assertNotNull(core.getPronosticador());
+        assertNotNull(core.getPronosticadores().iterator().next());
     }
 
     @Test
