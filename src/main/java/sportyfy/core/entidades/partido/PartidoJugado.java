@@ -3,6 +3,9 @@ package sportyfy.core.entidades.partido;
 import lombok.*;
 import sportyfy.core.entidades.equipo.Equipo;
 
+/**
+ * Clase que representa un partido jugado en el sistema. Esta se usa para almacenar los resultados de los partidos.
+ */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor

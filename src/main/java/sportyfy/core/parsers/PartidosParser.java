@@ -12,8 +12,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Clase que realiza el análisis de JSON para crear una lista de partidos jugados.
+ */
 public class PartidosParser {
 
+    /**
+     * Crea una lista de partidos jugados a partir de un JSON.
+     * @param jsonsPartidosJugadosTotales JSON que contiene la lista de partidos jugados.
+     * @param equipos Lista de equipos que participan en los partidos.
+     * @return Lista de partidos jugados creada a partir del JSON.
+     * @throws IOException Si ocurre un error al analizar el JSON.
+     */
     public List<PartidoJugado> crearPartidos(List<String> jsonsPartidosJugadosTotales, List<Equipo> equipos) throws IOException {
         List<PartidoJugado> partidosJugados = new ArrayList<>();
 
@@ -24,6 +34,13 @@ public class PartidosParser {
         return partidosJugados;
     }
 
+    /**
+     * Carga los partidos jugados desde un archivo JSON.
+     * @param archivo Archivo JSON que contiene los partidos jugados.
+     * @param equipos Lista de equipos que participan en los partidos.
+     * @return Lista de partidos jugados creada a partir del archivo JSON.
+     * @throws IOException Si ocurre un error al analizar el JSON.
+     */
     private List<PartidoJugado> cargarPartidosDesdeArchivo(File archivo, List<Equipo> equipos) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         List<PartidoJugado> partidosJugados = new ArrayList<>();

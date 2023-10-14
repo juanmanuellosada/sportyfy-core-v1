@@ -32,10 +32,9 @@ public class US2 {
     @Test
     @Order(2)
     @DisplayName("Carpeta vacía")
-    public void CA2_CarpetaVacia() {
-        assertThrows(NoSuchElementException.class, () -> {
-            iniciador.iniciar("src/test/java/carpetasDePrueba/pruebasPronosticadoresVacia");
-        });
+    public void CA2_CarpetaVacia() throws IOException {
+        SportyfyCore coreCarpetaVacia = iniciador.iniciar("src/test/java/carpetasDePrueba/pruebasPronosticadoresVacia");
+        assertTrue(coreCarpetaVacia.getPronosticadores().isEmpty());
     }
 
     @Test
@@ -50,10 +49,9 @@ public class US2 {
     @Test
     @Order(4)
     @DisplayName("Carpeta con JAR pero no es Pronosticador")
-    public void CA4_CarpetaConJARNoPronosticador() {
-        assertThrows(NoSuchElementException.class, () -> {
-            iniciador.iniciar("src/test/java/carpetasDePrueba/JARNoPronosticador");
-        });
+    public void CA4_CarpetaConJARNoPronosticador() throws IOException {
+        SportyfyCore coreJarNoPronosticador = iniciador.iniciar("src/test/java/carpetasDePrueba/JARNoPronosticador");
+        assertTrue(coreJarNoPronosticador.getPronosticadores().isEmpty());
     }
 
     @Test

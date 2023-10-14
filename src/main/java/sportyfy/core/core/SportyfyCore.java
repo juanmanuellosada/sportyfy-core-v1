@@ -13,9 +13,12 @@ import java.util.Observable;
 import java.util.Set;
 
 /**
- * La clase SportyfyCore representa el núcleo del sistema Sportyfy. Contiene información sobre pronosticadores,
- * equipos, partidos jugados y el pronóstico actual. Esta clase también proporciona la funcionalidad de
- * pronosticar partidos futuros y notificar a los observadores cuando cambia el pronóstico actual.
+ * La clase SportyfyCore representa el núcleo del sistema Sportyfy. Se trata de mi modelo.
+ * Contiene información sobre pronosticadores, equipos, partidos jugados y el pronóstico actual.
+ * Esta clase también proporciona la funcionalidad de pronosticar partidos futuros y notificar a los observadores
+ * cuando cambia el pronóstico actual.
+ * @author Juan Manuel Losada
+ * @see java.util.Observable
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -41,7 +44,7 @@ public class SportyfyCore extends Observable {
     }
 
     /**
-     * Realiza un pronóstico para un partido futuro utilizando el pronosticador especificado.
+     * Realiza un pronóstico para un partido futuro utilizando el pronosticador especificado buscándolo por nombre.
      *
      * @param partidoFuturo        Partido futuro para el que se desea realizar el pronóstico.
      * @param nombrePronosticador  Nombre del pronosticador que realizará el pronóstico.
