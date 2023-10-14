@@ -29,7 +29,7 @@ public class US1 {
             SportyfyCore core = iniciador.iniciar("src/pronosticadores");
             GimnasiaDeLaPlata = core.getEquipos().get(0);
             RiverPlate = core.getEquipos().get(1);
-            pronosticador = core.getPronosticador();
+            pronosticador = core.getPronosticadores().iterator().next();
 
             configurarPronosticos(core);
             configurarPronosticoEquipoSinPartidos(core);
@@ -67,16 +67,16 @@ public class US1 {
       }
 
       private static void configurarPronosticos(SportyfyCore core) {
-            core.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, RiverPlate));
+            core.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, RiverPlate), "PronosticadorFutbol");
             pronosticoEfectivo = core.getPronosticoActual();
-            core.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, GimnasiaDeLaPlata));
+            core.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, GimnasiaDeLaPlata), "PronosticadorFutbol");
             pronosticoEmpate = core.getPronosticoActual();
       }
 
       private static void configurarPronosticoEquipoSinPartidos(SportyfyCore core) {
             Equipo equipoSinPartidos = new Equipo();
             equipoSinPartidos.setNombre("EquipoSinPartidos");
-            core.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, equipoSinPartidos));
+            core.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, equipoSinPartidos), "PronosticadorFutbol");
             pronosticoEquipoSinPartidos = core.getPronosticoActual();
       }
 }

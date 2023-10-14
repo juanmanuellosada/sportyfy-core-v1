@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
+import java.util.concurrent.CountDownLatch;
 
 public class IniciadorSportyfyCore {
 
@@ -38,10 +39,7 @@ public class IniciadorSportyfyCore {
 
         Set<Pronosticador> pronosticadores = new BuscadorPronosticadores().buscarPronosticadores(rutaPronosticadores);
 
-        Pronosticador pronosticadorFutbol = new SelectorPronosticadores(pronosticadores)
-                .seleccionarPronosticador(pronosticadores.stream().findFirst().get().getClass().getSimpleName());
-
-        return new SportyfyCore(pronosticadorFutbol, equipos, partidoJugados);
+        return new SportyfyCore(pronosticadores, equipos, partidoJugados);
     }
 
     public String leerProperties(String propertie) throws IOException {
