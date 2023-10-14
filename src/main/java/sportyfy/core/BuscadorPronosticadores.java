@@ -16,6 +16,8 @@ import java.util.logging.Logger;
 
 @Data
 public class BuscadorPronosticadores {
+
+    private final Logger logger = Logger.getLogger(BuscadorPronosticadores.class.getName());
     public Set<Pronosticador> buscarPronosticadores(String ruta) throws FileNotFoundException {
         Set<Pronosticador> pronosticadores = new HashSet<>();
 
@@ -76,8 +78,6 @@ public class BuscadorPronosticadores {
                     // InvocationTargetException sale si el constructor lanza una excepción
                 } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException
                         | InstantiationException | InvocationTargetException e) {
-                    Logger logger = Logger.getLogger("BuscadorPronosticadores");
-
                     if(e instanceof ClassNotFoundException) {
                         logger.severe("No se encontro la clase " + nombreClase);
                     } else if(e instanceof NoSuchMethodException) {
