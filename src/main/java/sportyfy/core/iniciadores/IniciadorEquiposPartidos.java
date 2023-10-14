@@ -8,13 +8,30 @@ import sportyfy.core.parsers.PartidosParser;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Clase que inicializa los equipos y partidos a partir de archivos JSON.
+ */
 public class IniciadorEquiposPartidos {
 
+    /**
+     * Enumeración que representa los tipos de inicialización que se pueden realizar.
+     */
     public enum TipoInicializacion {
         EQUIPOS,
         PARTIDOS
     }
 
+    /**
+     * Inicializa los equipos y partidos a partir de archivos JSON.
+     *
+     * @param rutaArchivoEquipos        Ruta del archivo JSON que contiene los equipos.
+     * @param rutaCarpetaPartidosJugados Ruta de la carpeta que contiene los archivos JSON que contienen los partidos
+     *                                  jugados.
+     * @param equipos                   Lista de equipos a los que asignarle los partidos.
+     * @param tipo                      Tipo de inicialización a realizar. Puede ser EQUIPOS o PARTIDOS.
+     * @return Lista de objetos inicializados.
+     * @throws IOException Si ocurre un error al leer los archivos JSON.
+     */
     public static List<?> iniciar(String rutaArchivoEquipos, String rutaCarpetaPartidosJugados, List<Equipo> equipos,
             TipoInicializacion tipo) throws IOException {
         LectorJson lectorJson = new LectorJson();

@@ -4,6 +4,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+/**
+ * Clase que representa un equipo en el sistema.
+ */
 @Data
 @EqualsAndHashCode
 @ToString

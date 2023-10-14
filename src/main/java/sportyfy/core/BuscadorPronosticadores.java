@@ -1,7 +1,5 @@
 package sportyfy.core;
 
-import lombok.Data;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -14,10 +12,18 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.logging.Logger;
 
-@Data
+/**
+ * Clase que busca pronosticadores en un directorio
+ */
 public class BuscadorPronosticadores {
-
     private final Logger logger = Logger.getLogger(BuscadorPronosticadores.class.getName());
+
+    /**
+     * Busca pronosticadores en un directorio
+     * @param ruta Ruta del directorio
+     * @return Conjunto de pronosticadores
+     * @throws FileNotFoundException Si no existe el directorio
+     */
     public Set<Pronosticador> buscarPronosticadores(String ruta) throws FileNotFoundException {
         Set<Pronosticador> pronosticadores = new HashSet<>();
 
@@ -50,6 +56,12 @@ public class BuscadorPronosticadores {
         return pronosticadores;
     }
 
+    /**
+     * Obtiene los pronosticadores de un archivo .jar
+     * @param archivoJar Archivo .jar
+     * @return Conjunto de pronosticadores
+     * @throws IllegalArgumentException Si la extensión del archivo no es .jar
+     */
     private Set<Pronosticador> obtenerPronosticadoresDesdeJar(File archivoJar) {
         Set<Pronosticador> pronosticadores = new HashSet<>();
 
@@ -91,7 +103,6 @@ public class BuscadorPronosticadores {
                     }
                 }
             }
-            // IOException sale si no se puede abrir el archivo
         } catch (IOException e) {
             Logger.getLogger("BuscadorPronosticadores").severe("No se pudo abrir el archivo " + archivoJar.getName());
         }
@@ -99,6 +110,12 @@ public class BuscadorPronosticadores {
         return pronosticadores;
     }
 
+    /**
+     * Busca un pronosticador en un conjunto de pronosticadores
+     * @param pronosticadores Conjunto de pronosticadores
+     * @param nombre Nombre del pronosticador
+     * @return Pronosticador encontrado o null
+     */
     public Pronosticador buscarPronosticador(Set<Pronosticador> pronosticadores, String nombre) {
         return pronosticadores.stream()
                 .filter(p -> p.getClass().getSimpleName().equals(nombre))
