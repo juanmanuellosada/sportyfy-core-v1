@@ -1,5 +1,6 @@
 package sportyfy.core.iniciadores;
 
+import sportyfy.apiFootball.GeneradorJsons;
 import sportyfy.core.BuscadorPronosticadores;
 import sportyfy.core.Pronosticador;
 import sportyfy.core.SelectorPronosticadores;
@@ -15,20 +16,30 @@ import java.util.Set;
 
 public class IniciadorSportyfyCore {
 
-    private final String rutaArchivoEquipos;
+    private final String rutaCarpetaEquipos;
     private final String rutaCarpetaPartidosJugados;
 
     public IniciadorSportyfyCore() throws IOException {
-        this.rutaArchivoEquipos = leerProperties("rutaArchivoEquipos");
+        this.rutaCarpetaEquipos = leerProperties("rutaCarpetaEquipos");
         this.rutaCarpetaPartidosJugados = leerProperties("rutaCarpetaPartidosJugados");
+        //Genero los jsons de los equipos y los partidos
+        GeneradorJsons.generarJsonEquipos(rutaCarpetaEquipos);
+        GeneradorJsons.generarJsonsPartidos(rutaCarpetaPartidosJugados);
     }
+
+    // Agrego el SuppressWarnings por el casteo del método iniciar
+    @SuppressWarnings("unchecked")
     public SportyfyCore iniciar(String rutaPronosticadores) throws IOException {
-        List<Equipo> equipos = (List<Equipo>) IniciadorEquiposPartidos.iniciar(rutaArchivoEquipos, rutaCarpetaPartidosJugados, null, IniciadorEquiposPartidos.TipoInicializacion.EQUIPOS);
-        List<PartidoJugado> partidoJugados = (List<PartidoJugado>) IniciadorEquiposPartidos.iniciar(rutaArchivoEquipos, rutaCarpetaPartidosJugados, equipos, IniciadorEquiposPartidos.TipoInicializacion.PARTIDOS);
+        List<Equipo> equipos = (List<Equipo>) IniciadorEquiposPartidos.iniciar(rutaCarpetaEquipos + "/equipos.json",
+                rutaCarpetaPartidosJugados, null, IniciadorEquiposPartidos.TipoInicializacion.EQUIPOS);
+
+        List<PartidoJugado> partidoJugados = (List<PartidoJugado>) IniciadorEquiposPartidos.iniciar(rutaCarpetaEquipos,
+                rutaCarpetaPartidosJugados, equipos, IniciadorEquiposPartidos.TipoInicializacion.PARTIDOS);
 
         Set<Pronosticador> pronosticadores = new BuscadorPronosticadores().buscarPronosticadores(rutaPronosticadores);
 
-        Pronosticador pronosticadorFutbol = new SelectorPronosticadores(pronosticadores).seleccionarPronosticador(pronosticadores.stream().findFirst().get().getClass().getSimpleName());
+        Pronosticador pronosticadorFutbol = new SelectorPronosticadores(pronosticadores)
+                .seleccionarPronosticador(pronosticadores.stream().findFirst().get().getClass().getSimpleName());
 
         return new SportyfyCore(pronosticadorFutbol, equipos, partidoJugados);
     }

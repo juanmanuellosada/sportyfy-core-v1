@@ -12,6 +12,4 @@ import sportyfy.core.entidades.equipo.Equipo;
 public abstract class Partido {
     private Equipo equipoLocal;
     private Equipo equipoVisitante;
-
-    public abstract boolean tieneGoles();
 }
