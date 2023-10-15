@@ -64,7 +64,7 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.TOKEN }}
-        publish_dir: ./test-results/
+        publish_dir: ./
 
     - name: Publish Javadoc as Github Pages
       uses: peaceiris/actions-gh-pages@v3
