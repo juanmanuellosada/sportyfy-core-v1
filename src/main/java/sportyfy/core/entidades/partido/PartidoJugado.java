@@ -26,7 +26,7 @@ public class PartidoJugado extends Partido {
         return esLocal(equipo) || esVisitante(equipo);
     }
 
-    public Equipo obtenerEquipoGanador() {
+    public Equipo obtenerGanador() {
         if (golesLocal > golesVisitante) {
             return getEquipoLocal();
         } else if (golesLocal < golesVisitante) {

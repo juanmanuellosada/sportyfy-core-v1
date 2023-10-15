@@ -27,12 +27,18 @@ public class IniciadorSportyfyCore {
          * JSONs de equipos y partidos y los
          * busca en la carpeta especificada. Luego genera los equipos y partidos jugados
          * a partir de los JSONs.
+         * @param generar Si se desea generar los JSONs. (Para que no se generen cada vez que se ejecuta el programa,
+         *                para los tests no necesito generarlos siempre).
          *
          * @throws IOException Si ocurre un error al leer los archivos JSON.
          */
-        public IniciadorSportyfyCore() throws IOException {
+        public IniciadorSportyfyCore(boolean generar) throws IOException {
                 this.rutaCarpetaEquipos = leerProperties("rutaCarpetaEquipos");
                 this.rutaCarpetaPartidosJugados = leerProperties("rutaCarpetaPartidosJugados");
+                if (generar) generarJsons();
+        }
+
+        private void generarJsons() {
                 GeneradorJsons.generarJsonEquipos(rutaCarpetaEquipos);
                 GeneradorJsons.generarJsonsPartidos(rutaCarpetaPartidosJugados);
         }

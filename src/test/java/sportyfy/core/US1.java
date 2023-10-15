@@ -25,7 +25,7 @@ public class US1 {
 
       @BeforeAll
       public static void escenario() throws IOException, IllegalArgumentException {
-            IniciadorSportyfyCore iniciador = new IniciadorSportyfyCore();
+            IniciadorSportyfyCore iniciador = new IniciadorSportyfyCore(false);
             SportyfyCore core = iniciador.iniciar("src/pronosticadores");
             GimnasiaDeLaPlata = core.getEquipos().get(0);
             RiverPlate = core.getEquipos().get(1);
@@ -61,9 +61,7 @@ public class US1 {
       @DisplayName("No existe información sobre los partidos (IllegalArgumentException)")
       public void CA4_NoHayInfoDePartidos() {
             List<PartidoJugado> partidosVacios = new ArrayList<>();
-            assertThrows(IllegalArgumentException.class, () -> {
-                  pronosticador.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, RiverPlate), partidosVacios);
-            });
+            assertThrows(IllegalArgumentException.class, () -> pronosticador.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, RiverPlate), partidosVacios));
       }
 
       private static void configurarPronosticos(SportyfyCore core) {
