@@ -32,42 +32,21 @@ jobs:
               
     - name: Build with Gradle
       run: ./gradlew build
-
-    - name: Generate Javadoc
-      run: ./gradlew javadoc
         
     - name: Archive Test Results
       uses: actions/upload-artifact@v2
       with:
         name: test-results
         path: build/reports/tests/test/
-
-    - name: Archive Javadoc
-      uses: actions/upload-artifact@v2
-      with:
-        name: javadoc
-        path: build/docs/javadoc/
   
     - name: Download Test Results
       uses: actions/download-artifact@v2
       with:
         name: test-results
         path: test-results
-
-    - name: Download Javadoc
-      uses: actions/download-artifact@v2
-      with:
-        name: javadoc
-        path: javadoc
     
     - name: Publish Test Results as Github Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.TOKEN }}
-        publish_dir: ./
-
-    - name: Publish Javadoc as Github Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.TOKEN }}
-        publish_dir: ./javadoc/
+        publish_dir: ./test-results/
