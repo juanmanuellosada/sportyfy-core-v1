@@ -8,7 +8,6 @@ import sportyfy.core.Pronostico;
 import sportyfy.core.entidades.equipo.Equipo;
 import sportyfy.core.entidades.partido.PartidoFuturo;
 import sportyfy.core.entidades.partido.PartidoJugado;
-
 import java.util.List;
 import java.util.Observable;
 import java.util.Set;
@@ -68,6 +67,8 @@ public class SportyfyCore extends Observable {
             throw new IllegalArgumentException("No se encontró el pronosticador");
 
         setPronosticoActual(pronosticador.pronosticar(partidoFuturo, partidosJugados));
+
+        System.out.println(pronosticoActual);
 
         setChanged();
         notifyObservers();
