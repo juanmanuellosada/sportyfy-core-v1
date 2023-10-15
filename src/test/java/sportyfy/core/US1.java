@@ -23,26 +23,16 @@ public class US1 {
       private static Pronostico pronosticoEmpate;
       private static Pronostico pronosticoEquipoSinPartidos;
 
-     /* @BeforeAll
-      public static void Escenario() throws IOException, IllegalArgumentException {
+      @BeforeAll
+      public static void escenario() throws IOException, IllegalArgumentException {
             IniciadorSportyfyCore iniciador = new IniciadorSportyfyCore();
             SportyfyCore core = iniciador.iniciar("src/pronosticadores");
             GimnasiaDeLaPlata = core.getEquipos().get(0);
             RiverPlate = core.getEquipos().get(1);
-            pronosticador = core.getPronosticador();
-            List<PartidoJugado> partidosAnteriores = core.getPartidosJugados();
+            pronosticador = core.getPronosticadores().iterator().next();
 
-            // Pronósticos
-            pronosticoEfectivo = pronosticador.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, RiverPlate),
-                    partidosAnteriores);
-            pronosticoEmpate = pronosticador.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, GimnasiaDeLaPlata), partidosAnteriores);
-
-            // Equipo sin partidos
-            Equipo equipoSinPartidos = new Equipo();
-            equipoSinPartidos.setNombre("EquipoSinPartidos");
-
-            // Pronóstico donde un equipo no tiene partidos (gana el otro)
-            pronosticoEquipoSinPartidos = pronosticador.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, equipoSinPartidos), partidosAnteriores);
+            configurarPronosticos(core);
+            configurarPronosticoEquipoSinPartidos(core);
       }
 
       @Test
@@ -54,17 +44,16 @@ public class US1 {
 
       @Test
       @Order(2)
-      @DisplayName("Pronóstico de empate para el partido (devuelve un PronosticoNull) ")
+      @DisplayName("Pronóstico de empate para el partido (devuelve un PronosticoNull)")
       public void CA2_PronosticoEmpate() {
-              assertTrue(pronosticoEmpate instanceof PronosticoNull);
+            assertInstanceOf(PronosticoNull.class, pronosticoEmpate);
       }
 
       @Test
       @Order(3)
       @DisplayName("No se encuentran partidos de equipo (gana el otro equipo con partidos)")
       public void CA3_NoSeEncuentranPartidosDeEquipo() {
-            assertEquals(GimnasiaDeLaPlata,
-                        pronosticoEquipoSinPartidos.getEquipoGanador());
+            assertEquals(GimnasiaDeLaPlata, pronosticoEquipoSinPartidos.getEquipoGanador());
       }
 
       @Test
@@ -73,8 +62,21 @@ public class US1 {
       public void CA4_NoHayInfoDePartidos() {
             List<PartidoJugado> partidosVacios = new ArrayList<>();
             assertThrows(IllegalArgumentException.class, () -> {
-                  Pronostico pronosticoPartidosVacios = pronosticador.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, RiverPlate),
-                              partidosVacios);
+                  pronosticador.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, RiverPlate), partidosVacios);
             });
-      }*/
+      }
+
+      private static void configurarPronosticos(SportyfyCore core) {
+            core.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, RiverPlate), "PronosticadorFutbol");
+            pronosticoEfectivo = core.getPronosticoActual();
+            core.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, GimnasiaDeLaPlata), "PronosticadorFutbol");
+            pronosticoEmpate = core.getPronosticoActual();
+      }
+
+      private static void configurarPronosticoEquipoSinPartidos(SportyfyCore core) {
+            Equipo equipoSinPartidos = new Equipo();
+            equipoSinPartidos.setNombre("EquipoSinPartidos");
+            core.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, equipoSinPartidos), "PronosticadorFutbol");
+            pronosticoEquipoSinPartidos = core.getPronosticoActual();
+      }
 }

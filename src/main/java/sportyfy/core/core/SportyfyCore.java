@@ -30,11 +30,11 @@ public class SportyfyCore extends Observable {
         this.partidosJugados = partidosJugados;
     }
 
-    public void pronosticar(PartidoFuturo partidoFuturo, List<PartidoJugado> partidosJugados, String nombrePronosticador) {
+    public void pronosticar(PartidoFuturo partidoFuturo, String nombrePronosticador) {
         BuscadorPronosticadores buscadorPronosticadores = new BuscadorPronosticadores();
         Pronosticador pronosticador = buscadorPronosticadores.buscarPronosticador(pronosticadores, nombrePronosticador);
         if (pronosticador != null) {
-            pronosticoActual = pronosticador.pronosticar(partidoFuturo, partidosJugados);
+            pronosticoActual = pronosticador.pronosticar(partidoFuturo, this.partidosJugados);
             setChanged();
             notifyObservers();
         }
