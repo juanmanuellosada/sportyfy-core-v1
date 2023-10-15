@@ -14,60 +14,70 @@ import java.util.Properties;
 import java.util.Set;
 
 /**
- * Clase que inicializa el núcleo de Sportyfy, generando JSONs de equipos y partidos y buscando los pronosticadores.
+ * Clase que inicializa el núcleo de Sportyfy, generando JSONs de equipos y
+ * partidos y buscando los pronosticadores.
  */
 public class IniciadorSportyfyCore {
 
-    private final String rutaCarpetaEquipos;
-    private final String rutaCarpetaPartidosJugados;
+        private final String rutaCarpetaEquipos;
+        private final String rutaCarpetaPartidosJugados;
 
-    /**
-     * Construye una instancia de IniciadorSportyfyCore. Al construirse, genera los JSONs de equipos y partidos y los
-     * busca en la carpeta especificada. Luego genera los equipos y partidos jugados a partir de los JSONs.
-     *
-     * @throws IOException Si ocurre un error al leer los archivos JSON.
-     */
-    public IniciadorSportyfyCore() throws IOException {
-        this.rutaCarpetaEquipos = leerProperties("rutaCarpetaEquipos");
-        this.rutaCarpetaPartidosJugados = leerProperties("rutaCarpetaPartidosJugados");
-        GeneradorJsons.generarJsonEquipos(rutaCarpetaEquipos);
-        GeneradorJsons.generarJsonsPartidos(rutaCarpetaPartidosJugados);
-    }
+        /**
+         * Construye una instancia de IniciadorSportyfyCore. Al construirse, genera los
+         * JSONs de equipos y partidos y los
+         * busca en la carpeta especificada. Luego genera los equipos y partidos jugados
+         * a partir de los JSONs.
+         *
+         * @throws IOException Si ocurre un error al leer los archivos JSON.
+         */
+        public IniciadorSportyfyCore() throws IOException {
+                this.rutaCarpetaEquipos = leerProperties("rutaCarpetaEquipos");
+                this.rutaCarpetaPartidosJugados = leerProperties("rutaCarpetaPartidosJugados");
+                GeneradorJsons.generarJsonEquipos(rutaCarpetaEquipos);
+                GeneradorJsons.generarJsonsPartidos(rutaCarpetaPartidosJugados);
+        }
 
-    /**
-     * Inicializa el SportyfyCore, buscando los pronosticadores en la carpeta especificada.
-     *
-     * @param rutaPronosticadores Ruta de la carpeta que contiene los pronosticadores.
-     * @return Instancia de SportyfyCore inicializada.
-     * @throws IOException Si ocurre un error al leer los archivos JSON.
-     */
-    @SuppressWarnings("unchecked")
-    public SportyfyCore iniciar(String rutaPronosticadores) throws IOException {
-        List<Equipo> equipos = (List<Equipo>) IniciadorEquiposPartidos.iniciar(rutaCarpetaEquipos + "/equipos.json",
-                rutaCarpetaPartidosJugados, null, IniciadorEquiposPartidos.TipoInicializacion.EQUIPOS);
+        /**
+         * Inicializa el SportyfyCore, buscando los pronosticadores en la carpeta
+         * especificada.
+         *
+         * @param rutaPronosticadores Ruta de la carpeta que contiene los
+         *                            pronosticadores.
+         * @return Instancia de SportyfyCore inicializada.
+         * @throws IOException Si ocurre un error al leer los archivos JSON.
+         */
+        @SuppressWarnings("unchecked")
+        public SportyfyCore iniciar(String rutaPronosticadores) throws IOException {
+                List<Equipo> equipos = (List<Equipo>) IniciadorEquiposPartidos.iniciar(
+                                rutaCarpetaEquipos + "/equipos.json",
+                                rutaCarpetaPartidosJugados, null, IniciadorEquiposPartidos.TipoInicializacion.EQUIPOS);
 
-        List<PartidoJugado> partidoJugados = (List<PartidoJugado>) IniciadorEquiposPartidos.iniciar(rutaCarpetaEquipos,
-                rutaCarpetaPartidosJugados, equipos, IniciadorEquiposPartidos.TipoInicializacion.PARTIDOS);
+                List<PartidoJugado> partidoJugados = (List<PartidoJugado>) IniciadorEquiposPartidos.iniciar(
+                                rutaCarpetaEquipos,
+                                rutaCarpetaPartidosJugados, equipos,
+                                IniciadorEquiposPartidos.TipoInicializacion.PARTIDOS);
 
-        Set<Pronosticador> pronosticadores = new BuscadorPronosticadores().buscarPronosticadores(rutaPronosticadores);
+                Set<Pronosticador> pronosticadores = new BuscadorPronosticadores()
+                                .buscarPronosticadores(rutaPronosticadores);
 
-        return new SportyfyCore(pronosticadores, equipos, partidoJugados);
-    }
+                return new SportyfyCore(pronosticadores, equipos, partidoJugados);
+        }
 
+        /**
+         * Método para leer el archivo de propiedades, que contiene las rutas de los
+         * archivos JSON.
+         * 
+         * @param propertie Nombre de la propiedad a leer.
+         * @return Valor de la propiedad.
+         * @throws IOException Si ocurre un error al leer el archivo.
+         */
+        public String leerProperties(String propertie) throws IOException {
+                Properties prop = new Properties();
 
-    /**
-     * Método para leer el archivo de propiedades, que contiene las rutas de los archivos JSON.
-     * @param propertie Nombre de la propiedad a leer.
-     * @return Valor de la propiedad.
-     * @throws IOException Si ocurre un error al leer el archivo.
-     */
-    public String leerProperties(String propertie) throws IOException {
-        Properties prop = new Properties();
+                FileInputStream input = new FileInputStream("src/main/resources/rutas.properties");
+                prop.load(input);
 
-        FileInputStream input = new FileInputStream("src/main/resources/rutas.properties");
-        prop.load(input);
-
-        return prop.getProperty(propertie);
-    }
+                return prop.getProperty(propertie);
+        }
 
 }

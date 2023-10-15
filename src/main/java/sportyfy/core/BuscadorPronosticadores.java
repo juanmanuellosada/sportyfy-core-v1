@@ -20,6 +20,7 @@ public class BuscadorPronosticadores {
 
     /**
      * Busca pronosticadores en un directorio
+     * 
      * @param ruta Ruta del directorio
      * @return Conjunto de pronosticadores
      * @throws FileNotFoundException Si no existe el directorio
@@ -42,14 +43,12 @@ public class BuscadorPronosticadores {
                     if (archivo.isFile() && archivo.getName().endsWith(".jar")) {
                         // Agregamos los pronosticadores del archivo
                         pronosticadores.addAll(obtenerPronosticadoresDesdeJar(archivo));
-                    }
-                    else if(archivo.isFile() && !archivo.getName().endsWith(".gitkeep")){
-                      throw new IllegalArgumentException("La extensión del archivo encontrado no es .jar");
+                    } else if (archivo.isFile() && !archivo.getName().endsWith(".gitkeep")) {
+                        throw new IllegalArgumentException("La extensión del archivo encontrado no es .jar");
                     }
                 }
             }
-        }
-        else{
+        } else {
             throw new FileNotFoundException("No existe o no es un directorio la dirección proporcionada");
         }
 
@@ -58,6 +57,7 @@ public class BuscadorPronosticadores {
 
     /**
      * Obtiene los pronosticadores de un archivo .jar
+     * 
      * @param archivoJar Archivo .jar
      * @return Conjunto de pronosticadores
      * @throws IllegalArgumentException Si la extensión del archivo no es .jar
@@ -90,16 +90,17 @@ public class BuscadorPronosticadores {
                     // InvocationTargetException sale si el constructor lanza una excepción
                 } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException
                         | InstantiationException | InvocationTargetException e) {
-                    if(e instanceof ClassNotFoundException) {
+                    if (e instanceof ClassNotFoundException) {
                         logger.severe("No se encontro la clase " + nombreClase);
-                    } else if(e instanceof NoSuchMethodException) {
+                    } else if (e instanceof NoSuchMethodException) {
                         logger.severe("No se encontro el constructor sin argumentos de la clase " + nombreClase);
-                    } else if(e instanceof IllegalAccessException) {
+                    } else if (e instanceof IllegalAccessException) {
                         logger.severe("No se puede acceder al constructor sin argumentos de la clase " + nombreClase);
-                    } else if(e instanceof InstantiationException) {
+                    } else if (e instanceof InstantiationException) {
                         logger.severe("No se puede instanciar la clase " + nombreClase);
                     } else {
-                        logger.severe("El constructor sin argumentos de la clase " + nombreClase + " lanzo una excepcion");
+                        logger.severe(
+                                "El constructor sin argumentos de la clase " + nombreClase + " lanzo una excepcion");
                     }
                 }
             }
@@ -112,11 +113,13 @@ public class BuscadorPronosticadores {
 
     /**
      * Busca un pronosticador en un conjunto de pronosticadores
+     * 
      * @param pronosticadores Conjunto de pronosticadores
-     * @param nombre Nombre del pronosticador
+     * @param nombre          Nombre del pronosticador
      * @return Pronosticador encontrado o null
      */
     public Pronosticador buscarPronosticador(Set<Pronosticador> pronosticadores, String nombre) {
+
         return pronosticadores.stream()
                 .filter(p -> p.getClass().getSimpleName().equals(nombre))
                 .findFirst()

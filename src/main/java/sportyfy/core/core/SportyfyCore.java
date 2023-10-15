@@ -1,4 +1,5 @@
 package sportyfy.core.core;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import sportyfy.core.BuscadorPronosticadores;
@@ -11,12 +12,17 @@ import sportyfy.core.entidades.partido.PartidoJugado;
 import java.util.List;
 import java.util.Observable;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
- * La clase SportyfyCore representa el núcleo del sistema Sportyfy. Se trata de mi modelo.
- * Contiene información sobre pronosticadores, equipos, partidos jugados y el pronóstico actual.
- * Esta clase también proporciona la funcionalidad de pronosticar partidos futuros y notificar a los observadores
+ * La clase SportyfyCore representa el núcleo del sistema Sportyfy. Se trata de
+ * mi modelo.
+ * Contiene información sobre pronosticadores, equipos, partidos jugados y el
+ * pronóstico actual.
+ * Esta clase también proporciona la funcionalidad de pronosticar partidos
+ * futuros y notificar a los observadores
  * cuando cambia el pronóstico actual.
+ * 
  * @author Juan Manuel Losada
  * @see java.util.Observable
  */
@@ -33,10 +39,11 @@ public class SportyfyCore extends Observable {
     /**
      * Construye una instancia de SportyfyCore.
      *
-     * @param pronosticadores  Conjunto de pronosticadores disponibles en el sistema.
-     * @param equipos          Lista de equipos disponibles en el sistema.
-     * @param partidosJugados  Lista de partidos jugados en el sistema.
+     * @param pronosticadores Conjunto de pronosticadores disponibles en el sistema.
+     * @param equipos         Lista de equipos disponibles en el sistema.
+     * @param partidosJugados Lista de partidos jugados en el sistema.
      */
+    /* Puedo contruir el modelo sin tener pronóstico actual */
     public SportyfyCore(Set<Pronosticador> pronosticadores, List<Equipo> equipos, List<PartidoJugado> partidosJugados) {
         this.pronosticadores = pronosticadores;
         this.equipos = equipos;
@@ -44,19 +51,31 @@ public class SportyfyCore extends Observable {
     }
 
     /**
-     * Realiza un pronóstico para un partido futuro utilizando el pronosticador especificado buscándolo por nombre.
+     * Realiza un pronóstico para un partido futuro utilizando el pronosticador
+     * especificado buscándolo por nombre.
      *
-     * @param partidoFuturo        Partido futuro para el que se desea realizar el pronóstico.
-     * @param nombrePronosticador  Nombre del pronosticador que realizará el pronóstico.
-     * @throws IllegalArgumentException Si no se encuentra el pronosticador especificado.
+     * @param partidoFuturo       Partido futuro para el que se desea realizar el
+     *                            pronóstico.
+     * @param nombrePronosticador Nombre del pronosticador que realizará el
+     *                            pronóstico.
+     * @throws IllegalArgumentException Si no se encuentra el pronosticador
+     *                                  especificado.
      */
     public void pronosticar(PartidoFuturo partidoFuturo, String nombrePronosticador) {
-        Pronosticador pronosticador = new BuscadorPronosticadores().buscarPronosticador(pronosticadores, nombrePronosticador);
-        if (pronosticador == null) throw new IllegalArgumentException("No se encontró el pronosticador");
+        Pronosticador pronosticador = new BuscadorPronosticadores().buscarPronosticador(pronosticadores,
+                nombrePronosticador);
+        if (pronosticador == null)
+            throw new IllegalArgumentException("No se encontró el pronosticador");
 
         setPronosticoActual(pronosticador.pronosticar(partidoFuturo, partidosJugados));
 
         setChanged();
         notifyObservers();
+    }
+
+    public List<String> obtenerNombresPronosticadores(Set<Pronosticador> pronosticadores) {
+        return pronosticadores.stream()
+                .map(pronosticador -> pronosticador.getClass().getSimpleName())
+                .collect(Collectors.toList());
     }
 }
