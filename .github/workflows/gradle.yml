@@ -37,12 +37,6 @@ jobs:
         name: test-results
         path: test-results
     
-    - name: Publish Test Results as Github Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.TOKEN }}
-        publish_dir: ./test-results/
-
     - name: Generate Javadoc
       run: ./gradlew javadoc
 
@@ -52,9 +46,15 @@ jobs:
         name: javadoc
         path: build/docs/javadoc/  # Reemplaza con la ubicación real de tu Javadoc
 
-    - name: Publish Javadoc to Subdomain
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.TOKEN }}
-        publish_dir: ./javadoc  # Directorio para Javadoc
-        publish_branch: javadoc-pages  # Rama para el subdominio de Javadoc
+    - name: Deploy to Javadoc Pages
+      run: |
+        mkdir -p gh-pages
+        mv test-results gh-pages
+        mv javadoc gh-pages
+        cd gh-pages
+        git init
+        git config user.name "GitHub Actions"
+        git config user.email "actions@users.noreply.github.com"
+        git add .
+        git commit -m "Deploy GitHub Pages"
+        git push --force --quiet "https://${{ secrets.GITHUB_TOKEN }}"@github.com/juanmanuellosada/sportyfy-core.git javadoc-pages
