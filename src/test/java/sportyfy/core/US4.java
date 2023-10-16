@@ -20,9 +20,6 @@ public class US4 {
 
     @BeforeAll
     public static void escenario() {
-        // Limpiar directorio antes de las pruebas
-        limpiarDirectorio(rutaCarpetaEquipos);
-        limpiarDirectorio(rutaCarpetaPartidos);
 
         // Verificar que los directorios se creen correctamente
         assertTrue(crearDirectorio(rutaCarpetaEquipos), "No se pudo crear la carpeta: " + rutaCarpetaEquipos);
@@ -124,27 +121,9 @@ public class US4 {
         assertTrue(partido.getInt("golesVisitante") >= 0, "Cantidad de goles visitantes no válida.");
     }
 
-    @AfterAll
-    public static void limpiarArchivosGenerados() {
-        limpiarDirectorio(rutaCarpetaEquipos);
-        limpiarDirectorio(rutaCarpetaPartidos);
-    }
-
     private static boolean crearDirectorio(String ruta) {
         File carpeta = new File(ruta);
         return carpeta.exists() || carpeta.mkdirs();
-    }
-
-    private static void limpiarDirectorio(String ruta) {
-        File directorio = new File(ruta);
-        File[] archivos = directorio.listFiles();
-        if (archivos != null) {
-            for (File archivo : archivos) {
-                if (!archivo.isDirectory()) {
-                    archivo.delete();
-                }
-            }
-        }
     }
 
 }
