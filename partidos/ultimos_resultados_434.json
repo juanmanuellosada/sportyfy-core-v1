@@ -1,0 +1,254 @@
+[
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 456},
+        "golesLocal": 0,
+        "golesVisitante": 3
+    },
+    {
+        "equipoLocal": {"id": 448},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 2,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 453},
+        "golesLocal": 1,
+        "golesVisitante": 2
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 438},
+        "golesLocal": 2,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 445},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 2,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 437},
+        "golesLocal": 2,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 450},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 0,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 438},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 3,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 0,
+        "golesVisitante": 2
+    },
+    {
+        "equipoLocal": {"id": 449},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 0,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 2432},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 1,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 448},
+        "golesLocal": 0,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 460},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 4,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 450},
+        "golesLocal": 2,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 437},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 3,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 436},
+        "golesLocal": 3,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 435},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 3,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 440},
+        "golesLocal": 0,
+        "golesVisitante": 2
+    },
+    {
+        "equipoLocal": {"id": 458},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 2,
+        "golesVisitante": 4
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 452},
+        "golesLocal": 1,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 459},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 0,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 446},
+        "golesLocal": 1,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 439},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 2,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 441},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 2,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 445},
+        "golesLocal": 1,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 1065},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 0,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 457},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 2,
+        "golesVisitante": 2
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 453},
+        "golesLocal": 1,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 455},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 2,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 451},
+        "golesLocal": 1,
+        "golesVisitante": 3
+    },
+    {
+        "equipoLocal": {"id": 456},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 2,
+        "golesVisitante": 2
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 1064},
+        "golesLocal": 1,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 8385},
+        "golesLocal": 1,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 478},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 1,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 478},
+        "golesLocal": 2,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 474},
+        "golesLocal": 0,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 2540},
+        "golesLocal": 0,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 1139},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 2,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 151},
+        "golesLocal": 0,
+        "golesVisitante": 2
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 1139},
+        "golesLocal": 1,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 151},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 0,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 2540},
+        "equipoVisitante": {"id": 434},
+        "golesLocal": 1,
+        "golesVisitante": 0
+    }
+]

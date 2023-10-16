@@ -1,0 +1,308 @@
+[
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 439},
+        "golesLocal": 2,
+        "golesVisitante": 2
+    },
+    {
+        "equipoLocal": {"id": 1064},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 0,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 451},
+        "golesLocal": 1,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 452},
+        "golesLocal": 2,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 1065},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 2,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 459},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 1,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 446},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 0,
+        "golesVisitante": 2
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 445},
+        "golesLocal": 2,
+        "golesVisitante": 4
+    },
+    {
+        "equipoLocal": {"id": 434},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 0,
+        "golesVisitante": 2
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 457},
+        "golesLocal": 1,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 453},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 0,
+        "golesVisitante": 2
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 455},
+        "golesLocal": 3,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 451},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 0,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 456},
+        "golesLocal": 1,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 1064},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 1,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 438},
+        "golesLocal": 0,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 1065},
+        "golesLocal": 1,
+        "golesVisitante": 2
+    },
+    {
+        "equipoLocal": {"id": 449},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 0,
+        "golesVisitante": 3
+    },
+    {
+        "equipoLocal": {"id": 2432},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 0,
+        "golesVisitante": 2
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 448},
+        "golesLocal": 2,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 460},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 0,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 450},
+        "golesLocal": 1,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 437},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 2,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 436},
+        "golesLocal": 1,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 435},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 1,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 440},
+        "golesLocal": 2,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 458},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 3,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 452},
+        "golesLocal": 1,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 459},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 1,
+        "golesVisitante": 2
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 446},
+        "golesLocal": 2,
+        "golesVisitante": 2
+    },
+    {
+        "equipoLocal": {"id": 439},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 2,
+        "golesVisitante": 2
+    },
+    {
+        "equipoLocal": {"id": 441},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 2,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 8386},
+        "golesLocal": 3,
+        "golesVisitante": 2
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 474},
+        "golesLocal": 1,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 478},
+        "golesLocal": 1,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 474},
+        "golesLocal": 3,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 1125},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 3,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 125},
+        "golesLocal": 2,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 2348},
+        "golesLocal": 4,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 125},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 2,
+        "golesVisitante": 3
+    },
+    {
+        "equipoLocal": {"id": 2348},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 0,
+        "golesVisitante": 3
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 1125},
+        "golesLocal": 3,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 8390},
+        "golesLocal": 1,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 1148},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 1,
+        "golesVisitante": 2
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 1148},
+        "golesLocal": 1,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 120},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 1,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 120},
+        "golesLocal": 2,
+        "golesVisitante": 1
+    },
+    {
+        "equipoLocal": {"id": 2424},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 0,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 1158},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 3,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 442},
+        "equipoVisitante": {"id": 1158},
+        "golesLocal": 0,
+        "golesVisitante": 0
+    },
+    {
+        "equipoLocal": {"id": 1946},
+        "equipoVisitante": {"id": 442},
+        "golesLocal": 1,
+        "golesVisitante": 1
+    }
+]
