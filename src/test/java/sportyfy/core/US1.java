@@ -15,12 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class US1 {
-      @Test
-        @Order(1)
-      public void testFalso() {
-            assertEquals(1,1);
-      }
-      /*
+
       private static Equipo GimnasiaDeLaPlata;
       private static Equipo RiverPlate;
       private static Pronosticador pronosticador;
@@ -81,5 +76,5 @@ public class US1 {
             equipoSinPartidos.setNombre("EquipoSinPartidos");
             core.pronosticar(new PartidoFuturo(GimnasiaDeLaPlata, equipoSinPartidos), "PronosticadorFutbol");
             pronosticoEquipoSinPartidos = core.getPronosticoActual();
-      }*/
+      }
 }

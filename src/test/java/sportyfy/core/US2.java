@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class US2 {
-/*
+
     private static IniciadorSportyfyCore iniciador;
 
     @BeforeAll
@@ -56,5 +56,5 @@ public class US2 {
     @DisplayName("Carpeta inexistente")
     public void CA5_CarpetaNoExiste() {
         assertThrows(FileNotFoundException.class, () -> iniciador.iniciar("src/test/java/carpetasDePrueba/carpetaInexistente"));
-    }*/
+    }
 }

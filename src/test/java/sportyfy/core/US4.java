@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class US4 {
-    /*
+
     private static final String rutaCarpetaEquipos = "equipos";
     private static final String rutaCarpetaPartidos = "partidos";
 
@@ -145,6 +145,6 @@ public class US4 {
                 }
             }
         }
-    }*/
+    }
 
 }

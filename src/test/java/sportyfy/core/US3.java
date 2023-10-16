@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class US3 {
-/*
+
       private static IniciadorSportyfyCore iniciador;
       private static SportyfyCore sportyfyCorePronosticadores;
       private static Set<Pronosticador> pronosticadoresPorDefecto;
@@ -83,5 +83,5 @@ public class US3 {
             pronosticoFutbol = sportyfyCorePronosticadores.getPronosticoActual();
             sportyfyCorePronosticadores.pronosticar(partido,"PronosticadorFutbolCaraACara");
             pronosticoFutbolCaraACara =sportyfyCorePronosticadores.getPronosticoActual();
-      }*/
+      }
 }

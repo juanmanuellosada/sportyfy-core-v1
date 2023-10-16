@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class US5 {
-    /*
+
     private Equipo riverPlate;
     private SportyfyCore sportyfyCore;
     private Historial historial;
@@ -53,5 +53,5 @@ public class US5 {
         historial.update(sportyfyCore,null);
 
         assertNull(historial.getPronosticosRealizados().get(0).getEquipoGanador());
-    }*/
+    }
 }
