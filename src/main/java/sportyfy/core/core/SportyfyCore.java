@@ -68,8 +68,6 @@ public class SportyfyCore extends Observable {
 
         setPronosticoActual(pronosticador.pronosticar(partidoFuturo, partidosJugados));
 
-        System.out.println(pronosticoActual);
-
         setChanged();
         notifyObservers();
     }
